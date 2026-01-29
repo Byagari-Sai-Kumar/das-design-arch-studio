@@ -1,10 +1,16 @@
+import { BrowserRouter,Routes,Route } from 'react-router-dom'
+import Navbar from './components/navigationBar/navbar'
+import ScrollToSection from './components/navigationBar/scrollToSection'
 import './App.css'
 
 function App() {
   return(
-    <div>
-      <h1>Das Design Arch Studio</h1>
-    </div>
+    <BrowserRouter>
+      <Navbar/>
+      <Routes>
+        <Route path='/*' element={<ScrollToSection/>}/>
+      </Routes>
+    </BrowserRouter>
   )
 }
 
