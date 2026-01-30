@@ -1,5 +1,25 @@
+:root {
+  --color-primary: #A18167;
+  --color-secondary: #D1B7A1;
+  --color-accent: #CBB9A4;
+
+  --color-bg-main: #FAF9F6;
+  --color-bg-alt: #F4F1EA;
+  --color-bg-card: #E6DAC8;
+
+  --color-soft: #F2E5D9;
+
+  --color-text-dark: #3a2f28;
+  --color-text-light: #ffffff;
+}
+
 body {
   padding-top: 80px; /* navbar height */
-  background-color: #ffffff;
-  color: #111;
+  background: var(--color-bg-main);
+  color: var(--color-text-dark);
+
+  font-family: "Montserrat";
+  font-weight: "Regular 400";
+
+  letter-spacing: 0.3px;
 }

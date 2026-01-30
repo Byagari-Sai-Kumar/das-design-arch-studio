@@ -1,5 +1,7 @@
 import { NavLink } from "react-router-dom";
 import { useState } from "react";
+import { IoMdArrowDropdown } from "react-icons/io";
+import { IoMenu } from "react-icons/io5";
 import './navbar.css'
 
 const Navbar = () => {
@@ -18,9 +20,12 @@ const Navbar = () => {
                 <li><NavLink to="/" onClick={closeAll}>Home</NavLink></li>
                 <li><NavLink to="/what-we-do" onClick={closeAll}>What We Do</NavLink></li>
                 <li><NavLink to="/our-services" onClick={closeAll}>Our Services</NavLink></li>
-                <li className="more">
+                <li className={`more ${desktopOpen ? "open" : ""}`}>
                     <span onClick={() => setDesktopOpen(!desktopOpen)}>
                         More
+                        <span className="more-dropdown-arrow">
+                            <IoMdArrowDropdown />
+                        </span>
                     </span>
                     {desktopOpen &&
                         <ul className="dropdown">
@@ -35,7 +40,7 @@ const Navbar = () => {
             </ul>
 
             <div className="hamburger" onClick={() => setMobileOpen(!mobileOpen)}>
-                |||
+                <IoMenu />
             </div>
             {
                 mobileOpen && (
