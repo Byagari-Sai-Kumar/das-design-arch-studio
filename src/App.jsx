@@ -1,6 +1,7 @@
 import { BrowserRouter,Routes,Route } from 'react-router-dom'
 import Navbar from './components/navigationBar/navbar'
 import ScrollToSection from './components/navigationBar/scrollToSection'
+import ContactUs from "./components/contactUs/contactUs";
 import './App.css'
 
 function App() {
@@ -8,7 +9,8 @@ function App() {
     <BrowserRouter>
       <Navbar/>
       <Routes>
-        <Route path='/*' element={<ScrollToSection/>}/>
+  <Route path="/*" element={<ScrollToSection />} />
+  <Route path="/contact-us" element={<ContactUs />} />
       </Routes>
     </BrowserRouter>
   )
