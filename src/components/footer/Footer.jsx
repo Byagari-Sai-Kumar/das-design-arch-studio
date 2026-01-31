@@ -7,7 +7,7 @@ const Footer = () => {
         {/* Left */}
         <div className="footer-brand">
           <h2>
-            Design Arc <span>Studio</span>
+            Design Arch <span>Studio</span>
           </h2>
           <p>
             Transforming spaces into elegant experiences. <br />
