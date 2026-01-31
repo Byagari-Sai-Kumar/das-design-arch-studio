@@ -7,12 +7,13 @@ import './App.css'
 function App() {
   return(
     <BrowserRouter>
-      <Navbar/>
-      <Routes>
-  <Route path="/*" element={<ScrollToSection />} />
-  <Route path="/contact-us" element={<ContactUs />} />
-      </Routes>
+  <Navbar />
+  <Routes>
+    <Route path="/*" element={<ScrollToSection />} />
+    <Route path="/contact-us" element={<ContactUs />} />
+  </Routes>
     </BrowserRouter>
+
   )
 }
 
