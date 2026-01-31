@@ -3,6 +3,7 @@ import heroInteriorOne from '../../assets/home/images/heroInteriorOne.jpg';
 import heroInteriorTwo from '../../assets/home/images/heroInteriorTwo.jpg';
 import heroInteriorThree from '../../assets/home/images/heroInteriorThree.jpg';
 import heroInteriorFour from '../../assets/home/images/heroInteriorFour.jpg';
+import { BsArrowLeft,BsArrowRight  } from "react-icons/bs";
 import "./home.css";
 
 const slides = [
@@ -48,18 +49,18 @@ const Home = () => {
         <section className="hero-section">
         {slides.map((slide, index) => (
             <div
-            key={index}
-            className={`hero-slide ${index === current ? "active" : ""}`}
-            style={{
-                backgroundImage: `url(${slide.image})`
-            }}
+                key={index}
+                className={`hero-slide ${index === current ? "active" : ""}`}
+                style={{
+                    backgroundImage: `url(${slide.image})`
+                }}
             >
             <div className="hero-overlay"></div>
 
             <div className="hero-content">
                 <h1>
                 {slide.title}
-                <span>{slide.highlight}</span>
+                <span className="title-highlight-span">{slide.highlight}</span>
                 </h1>
 
                 <button className="hero-btn">
@@ -78,7 +79,7 @@ const Home = () => {
             )
             }
         >
-            ‹
+            <BsArrowLeft className="arrow-icon"/>
         </button>
 
         <button
@@ -87,7 +88,7 @@ const Home = () => {
             setCurrent((current + 1) % slides.length)
             }
         >
-            ›
+            <BsArrowRight className="arrow-icon"/>
         </button>
 
         {/* dots */}

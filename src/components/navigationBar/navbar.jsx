@@ -1,5 +1,6 @@
 import { NavLink } from "react-router-dom";
 import { useState } from "react";
+import dasDesignLogo from '../../assets/navbar/logo/dasDesignLogo.jpeg'
 import { IoMdArrowDropdown } from "react-icons/io";
 import { IoMenu } from "react-icons/io5";
 import './navbar.css'
@@ -15,7 +16,11 @@ const Navbar = () => {
 
     return(
         <nav className="navbar">
-            <div className="logo">Das Design</div>
+            <div className="logo">
+                <NavLink to="/" onClick={closeAll}>
+                    <img src={dasDesignLogo} className="logo-image"/>
+                </NavLink>
+            </div>
             <ul className="nav-links desktop">
                 <li><NavLink to="/" onClick={closeAll}>Home</NavLink></li>
                 <li><NavLink to="/what-we-do" onClick={closeAll}>What We Do</NavLink></li>
@@ -40,7 +45,7 @@ const Navbar = () => {
             </ul>
 
             <div className="hamburger" onClick={() => setMobileOpen(!mobileOpen)}>
-                <IoMenu />
+                <IoMenu className="io-menu"/>
             </div>
             {
                 mobileOpen && (

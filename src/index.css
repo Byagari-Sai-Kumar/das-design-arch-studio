@@ -11,10 +11,12 @@
 
   --color-text-dark: #3a2f28;
   --color-text-light: #ffffff;
+
+  --navbar-height: 10vh;
+  --hero-height: 90vh;
 }
 
 body {
-  padding-top: 80px; /* navbar height */
   background: var(--color-bg-main);
   color: var(--color-text-dark);
 
