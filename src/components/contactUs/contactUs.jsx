@@ -134,7 +134,7 @@ const ContactUs = () => {
               <iframe
                 title="location-map"
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3807.206771141159!2d78.48233727430716!3d17.401861883487737!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb99dd1c6e6b75%3A0x3e58fea98ec4ffc7!2sKala%20Kunj%20Saree%20Vatika%20Himayatnagar!5e0!3m2!1sen!2sin!4v1769856967493"
-                loading="lazy"
+                loading="eager"
                 referrerPolicy="no-referrer-when-downgrade"
                 style={{ border: 0, width: "100%", height: "240px" }}
               />

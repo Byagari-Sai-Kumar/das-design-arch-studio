@@ -5,7 +5,8 @@
   width: 100%;
   height: var(--navbar-height);
 
-  background: var(--color-bg-main);
+  /* Default: visible white bar (overridden to transparent only on home) */
+  background: #ffffff;
   color: var(--color-primary);
 
   display: flex;
@@ -15,7 +16,71 @@
   padding: 0 30px;
   z-index: 1000;
 
-  border-bottom: 1px solid var(--color-soft);
+  border-bottom: 1px solid rgba(58, 47, 40, 0.12);
+  box-shadow: 0 1px 12px rgba(0, 0, 0, 0.06);
+
+  transition: background 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* Solid white navbar on all pages except home – clearly visible bar */
+.navbar.navbar--solid {
+  background: #ffffff !important;
+  border-bottom: 1px solid rgba(58, 47, 40, 0.12);
+  box-shadow: 0 1px 12px rgba(0, 0, 0, 0.06);
+}
+
+.navbar.navbar--solid .nav-links a,
+.navbar.navbar--solid .more > span {
+  color: var(--color-primary);
+}
+
+.navbar.navbar--solid .io-menu,
+.navbar.navbar--solid .hamburger {
+  color: var(--color-primary);
+}
+
+/* Transparent navbar only on home page (path exactly "/") */
+.navbar.navbar--transparent {
+  background: transparent;
+  border-bottom-color: transparent;
+  box-shadow: none;
+  color: #fff;
+}
+
+.navbar.navbar--transparent .nav-links a,
+.navbar.navbar--transparent .more > span {
+  color: #fff;
+}
+
+.navbar.navbar--transparent .nav-links a:hover,
+.navbar.navbar--transparent .more > span:hover {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.navbar.navbar--transparent .nav-links a.active {
+  border-bottom-color: var(--color-accent);
+}
+
+.navbar.navbar--transparent .io-menu {
+  color: #fff;
+}
+
+.navbar.navbar--transparent .hamburger {
+  color: #fff;
+}
+
+/* Dropdown on home: same as other pages – solid background, dark text (readable) */
+.navbar.navbar--transparent .dropdown {
+  background: #ffffff;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+}
+
+.navbar.navbar--transparent .dropdown li a {
+  color: var(--color-primary);
+}
+
+.navbar.navbar--transparent .dropdown li:hover {
+  background: var(--color-soft);
 }
 
 /* ---------------- LOGO ---------------- */
@@ -106,12 +171,13 @@
   position: absolute;
   top: 50px;
   right: 0;
+  margin-right: 16px; /* keep away from viewport edge / scrollbar */
 
   background: var(--color-bg-alt);
-  min-width: 210px;
+  min-width: 220px;
+  padding: 8px 0 10px 0;
 
   border-radius: 8px;
-  padding: 6px 0;
 
   box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
 
@@ -120,7 +186,7 @@
 }
 
 .dropdown li {
-  padding: 12px 22px;
+  padding: 12px 24px;
   list-style: none;
 }
 

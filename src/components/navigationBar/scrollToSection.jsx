@@ -14,6 +14,14 @@ const ScrollToSection = () => {
     const location = useLocation();
 
     useEffect(() => {
+        // When coming from Contact Us link: go to home and scroll to contact section (so user can scroll up)
+        const scrollToId = location.state?.scrollTo;
+        if (scrollToId) {
+            const el = document.getElementById(scrollToId);
+            if (el) el.scrollIntoView({ behavior: "smooth" });
+            return;
+        }
+
         const path = location.pathname.replace("/","");
 
         if(!path){
