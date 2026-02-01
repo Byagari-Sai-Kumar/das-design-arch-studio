@@ -122,7 +122,7 @@ const ContactUs = () => {
               <div>
                 <h4>Location</h4>
                 <p>
-                  Himayatnagar, 3-6-521/1 <br />
+                Himayatnagar, 3-6-521/1 <br />
                   Flat No 202, Hyderabad <br />
                   Telangana – 500029
                 </p>
