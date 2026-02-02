@@ -84,7 +84,7 @@ const ContactUs = () => {
               <div>
                 <h4>Phone</h4>
                 <p>
-                  <a href="tel:+918019898569">+91 8019898569</a>
+                  <a href="tel:+918019898569">(+91) 8019898569</a>
                 </p>
               </div>
             </div>
@@ -122,9 +122,10 @@ const ContactUs = () => {
               <div>
                 <h4>Location</h4>
                 <p>
-                Himayatnagar, 3-6-521/1 <br />
-                  Flat No 202, Hyderabad <br />
-                  Telangana – 500029
+                  Flat No 202,
+                  3-6-521/1,
+                  Himayatnagar Hyderabad
+                  Telangana 500029
                 </p>
               </div>
             </div>
