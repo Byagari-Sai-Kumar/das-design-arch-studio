@@ -1,7 +1,7 @@
 import { NavLink, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
 import dasDesignLogo from '../../assets/navbar/logo/dasDesignLogo.jpeg'
-import { IoMdArrowDropdown } from "react-icons/io";
+import { MdOutlinePermPhoneMsg } from "react-icons/md";
 import { IoMenu } from "react-icons/io5";
 import './navbar.css'
 
@@ -31,7 +31,7 @@ const Navbar = () => {
 
     const closeAll = () => {
         setMobileOpen(false);
-        setDesktopOpen(false);
+        //setDesktopOpen(false);
     }
 
     return(
@@ -42,25 +42,20 @@ const Navbar = () => {
                 </NavLink>
             </div>
             <ul className="nav-links desktop">
-                <li><NavLink to="/" onClick={closeAll}>Home</NavLink></li>
                 <li><NavLink to="/what-we-do" onClick={closeAll}>What We Do</NavLink></li>
                 <li><NavLink to="/our-services" onClick={closeAll}>Our Services</NavLink></li>
-                <li className={`more ${desktopOpen ? "open" : ""}`}>
-                    <span onClick={() => setDesktopOpen(!desktopOpen)}>
-                        More
-                        <span className="more-dropdown-arrow">
-                            <IoMdArrowDropdown />
-                        </span>
-                    </span>
-                    {desktopOpen &&
-                        <ul className="dropdown">
-                            <li><NavLink to="/how-we-work" onClick={closeAll}>How we work</NavLink></li>
-                            <li><NavLink to="/gallery" onClick={closeAll}>Gallery</NavLink></li>
-                            <li><NavLink to="/testimonials" onClick={closeAll}>Testimonials</NavLink></li>
-                            <li><NavLink to="/faq" onClick={closeAll}>FAQ</NavLink></li>
-                            <li><NavLink to="/contact-us" onClick={closeAll}>Contact Us</NavLink></li>
-                        </ul>
-                    }
+                <li><NavLink to="/gallery" onClick={closeAll}>Projects</NavLink></li>
+                <li><NavLink to="/testimonials" onClick={closeAll}>Testimonials</NavLink></li>
+                <li><NavLink to="/faq" onClick={closeAll}>FAQ</NavLink></li>
+                <li>
+                    <NavLink to="/contact-us" onClick={closeAll}>
+                        <button className="get-in-touch-button">
+                            Get In Touch 
+                            <span className="get-in-touch-phoneicon">
+                                <MdOutlinePermPhoneMsg />
+                            </span>
+                        </button>
+                    </NavLink>
                 </li>
             </ul>
 
@@ -70,11 +65,9 @@ const Navbar = () => {
             {
                 mobileOpen && (
                     <div className="mobile-menu">
-                        <NavLink to="/" onClick={closeAll}>Home</NavLink>
                         <NavLink to="/what-we-do" onClick={closeAll}>What We Do</NavLink>
                         <NavLink to="/our-services" onClick={closeAll}>Our Services</NavLink>
-                        <NavLink to="/how-we-work" onClick={closeAll}>How we work</NavLink>
-                        <NavLink to="/gallery" onClick={closeAll}>Gallery</NavLink>
+                        <NavLink to="/gallery" onClick={closeAll}>Projects</NavLink>
                         <NavLink to="/testimonials" onClick={closeAll}>Testimonials</NavLink>
                         <NavLink to="/faq" onClick={closeAll}>FAQ</NavLink>
                         <NavLink to="/contact-us" onClick={closeAll}>Contact Us</NavLink>

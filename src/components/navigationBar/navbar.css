@@ -122,6 +122,27 @@
   transition: color 0.2s ease;
 }
 
+.get-in-touch-button{
+  width: 140px;
+  height: 40px;
+  background-color: var(--color-soft);
+  color: var(--color-primary);
+  border-radius: 10px;
+  border-width: 0;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.get-in-touch-phoneicon{
+  margin-left: 10px;
+  margin-top: 5px;
+}
+
 .more > span {
   display: flex;
   align-items: center;
