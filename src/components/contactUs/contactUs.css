@@ -1,6 +1,5 @@
 .contact-section {
-    padding: 80px 20px;
-    background: #ffffff;
+    scroll-margin-top: var(--navbar-height);
   }
   
   .contact-container {
@@ -175,6 +174,25 @@
     background: #f0b429;
   }
   
+  /* Mobile */
+    @media (max-width: 767px) {
+      .contact-section{
+        padding: 30px 30px;
+      }
+    }
+
+    @media (min-width: 768px) and (max-width: 1024px) {
+      .contact-section{
+        padding: 50px 50px;
+      }
+    }
+
+    @media (min-width: 1025px) {
+      .contact-section{
+        padding: 50px 20px;
+      }
+    }
+
   /* Responsive */
   @media (max-width: 900px) {
     .contact-container {

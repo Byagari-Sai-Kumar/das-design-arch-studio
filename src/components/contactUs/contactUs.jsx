@@ -22,7 +22,8 @@ const ContactUs = () => {
   return (
     <>
       {/* CONTACT SECTION */}
-      <section id="contact" className="contact-section">
+      <section id="contact-us" className="contact-section">
+        <h2 className="our-services-heading">Contact Us</h2>
         <div className="contact-container">
           {/* LEFT: FORM */}
           <div className="contact-card">

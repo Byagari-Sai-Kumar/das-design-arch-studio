@@ -1,5 +1,5 @@
 .about-section {
-  padding: 100px 60px;
+  scroll-margin-top: var(--navbar-height);
   background: var(--color-bg-main);
 }
 
@@ -138,7 +138,6 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        margin-top: 50px;
     }
     .know-about-das{
         font-size: 30px;
@@ -171,7 +170,7 @@
     }
     
     .about-section{
-        padding: 20px 10px;
+        padding-top: 20px;
     }
 
     .about-company{
@@ -276,7 +275,7 @@
     }
 
     .about-section{
-        padding-top: 90px;
+        padding-top: 50px;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -340,7 +339,7 @@
     }
 
     .about-section{
-        padding-top: 90px;
+        padding-top: 50px;
         display: flex;
         flex-direction: column;
         justify-content: center;
