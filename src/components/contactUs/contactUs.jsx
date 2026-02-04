@@ -13,10 +13,30 @@ const ContactUs = () => {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
-  const onSubmit = (e) => {
+  // ✅ Netlify form submit helper
+  const encode = (data) =>
+    Object.keys(data)
+      .map((key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+      .join("&");
+
+  const onSubmit = async (e) => {
     e.preventDefault();
-    alert("Message sent (demo). Connect email/API to send real messages.");
-    setForm({ name: "", email: "", message: "" });
+
+    try {
+      await fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: encode({
+          "form-name": "contact",
+          ...form,
+        }),
+      });
+
+      alert("Message sent successfully!");
+      setForm({ name: "", email: "", message: "" });
+    } catch (error) {
+      alert("Something went wrong. Please try again.");
+    }
   };
 
   return (
@@ -24,10 +44,29 @@ const ContactUs = () => {
       {/* CONTACT SECTION */}
       <section id="contact-us" className="contact-section">
         <h2 className="our-services-heading">Contact Us</h2>
+
         <div className="contact-container">
           {/* LEFT: FORM */}
           <div className="contact-card">
-            <form className="contact-form" onSubmit={onSubmit}>
+            {/* ✅ Netlify enabled form */}
+            <form
+              className="contact-form"
+              name="contact"
+              method="POST"
+              data-netlify="true"
+              data-netlify-honeypot="bot-field"
+              onSubmit={onSubmit}
+            >
+              {/* ✅ required hidden field for Netlify */}
+              <input type="hidden" name="form-name" value="contact" />
+
+              {/* ✅ bot-field (spam protection) */}
+              <p style={{ display: "none" }}>
+                <label>
+                  Don’t fill this out: <input name="bot-field" onChange={onChange} />
+                </label>
+              </p>
+
               <div className="field">
                 <label>Name</label>
                 <input
@@ -110,7 +149,7 @@ const ContactUs = () => {
               </div>
             </div>
 
-            {/* Location */}
+            {/* Location (✅ one line) */}
             <div className="info-card">
               <div className="icon-circle">
                 <svg viewBox="0 0 24 24" className="icon" aria-hidden="true">
@@ -123,10 +162,7 @@ const ContactUs = () => {
               <div>
                 <h4>Location</h4>
                 <p>
-                  Flat No 202,
-                  3-6-521/1,
-                  Himayatnagar Hyderabad
-                  Telangana 500029
+                  Flat No 202, 3-6-521/1, Himayatnagar Hyderabad, Telangana 500029
                 </p>
               </div>
             </div>
