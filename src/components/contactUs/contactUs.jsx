@@ -22,21 +22,24 @@ const ContactUs = () => {
   const onSubmit = async (e) => {
     e.preventDefault();
 
-    try {
-      await fetch("/", {
-        method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: encode({
-          "form-name": "contact",
-          ...form,
-        }),
-      });
+    alert("Test message sent successfully!");
+    setForm({ name: "", email: "", message: "" });
 
-      alert("Message sent successfully!");
-      setForm({ name: "", email: "", message: "" });
-    } catch (error) {
-      alert("Something went wrong. Please try again.");
-    }
+    // try {
+    //   await fetch("/", {
+    //     method: "POST",
+    //     headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    //     body: encode({
+    //       "form-name": "contact",
+    //       ...form,
+    //     }),
+    //   });
+
+    //   alert("Message sent successfully!");
+    //   setForm({ name: "", email: "", message: "" });
+    // } catch (error) {
+    //   alert("Something went wrong. Please try again.");
+    // }
   };
 
   return (
@@ -73,6 +76,7 @@ const ContactUs = () => {
                   type="text"
                   name="name"
                   placeholder="Your name"
+                  className="contact-us-input"
                   value={form.name}
                   onChange={onChange}
                   required
@@ -122,7 +126,7 @@ const ContactUs = () => {
                 </svg>
               </div>
               <div>
-                <h4>Phone</h4>
+                <h4 className="contact-mode">Phone</h4>
                 <p>
                   <a href="tel:+918019898569">(+91) 8019898569</a>
                 </p>
@@ -140,7 +144,7 @@ const ContactUs = () => {
                 </svg>
               </div>
               <div>
-                <h4>Email</h4>
+                <h4 className="contact-mode">Email</h4>
                 <p>
                   <a href="mailto:designarchstudio646@gmail.com">
                     designarchstudio646@gmail.com
@@ -160,7 +164,7 @@ const ContactUs = () => {
                 </svg>
               </div>
               <div>
-                <h4>Location</h4>
+                <h4 className="contact-mode">Location</h4>
                 <p>
                   Flat No 202, 3-6-521/1, Himayatnagar Hyderabad, Telangana 500029
                 </p>

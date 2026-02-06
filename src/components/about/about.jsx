@@ -7,7 +7,7 @@ import teamMemberTwo from "../../assets/aboutUs/images/teamMemberTwo.jpg";
 
 const teamMembers = [
     {
-        name: "Abhi Teja Das",
+        name: "Abhinaya Das",
         role: "Principal Architect",
         experience: "12+ Years Experience",
         rating: 5,

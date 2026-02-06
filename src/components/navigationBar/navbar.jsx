@@ -37,16 +37,16 @@ const Navbar = () => {
     return(
         <nav className={`navbar ${showTransparent ? "navbar--transparent" : "navbar--solid"}`}>
             <div className="logo">
-                <NavLink to="/" onClick={closeAll}>
+                <NavLink to="/">
                     <img src={dasDesignLogoTwo} className="logo-image"/>
                 </NavLink>
             </div>
             <ul className="nav-links desktop">
-                <li><NavLink to="/what-we-do" onClick={closeAll}>What We Do</NavLink></li>
-                <li><NavLink to="/our-services" onClick={closeAll}>Our Services</NavLink></li>
-                <li><NavLink to="/gallery" onClick={closeAll}>Projects</NavLink></li>
-                <li><NavLink to="/testimonials" onClick={closeAll}>Testimonials</NavLink></li>
-                <li><NavLink to="/faq" onClick={closeAll}>FAQ</NavLink></li>
+                <li><NavLink to="/what-we-do">What We Do</NavLink></li>
+                <li><NavLink to="/our-services">Our Services</NavLink></li>
+                <li><NavLink to="/gallery">Projects</NavLink></li>
+                <li><NavLink to="/testimonials">Testimonials</NavLink></li>
+                <li><NavLink to="/faq">FAQ</NavLink></li>
                 <li>
                     <NavLink to="/contact-us" onClick={closeAll}>
                         <button className="get-in-touch-button">

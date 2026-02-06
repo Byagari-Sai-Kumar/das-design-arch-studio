@@ -110,6 +110,11 @@
     .services-section{
         padding: 20px 60px;
     }
+
+    .our-services-heading {
+        margin-bottom: 30px;
+    }
+
     .services-grid {
         grid-template-columns: repeat(4, 1fr);
     }

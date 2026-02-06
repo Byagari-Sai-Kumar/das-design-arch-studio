@@ -22,10 +22,14 @@ const faqData = [
     q: "Can I see my design before implementation?",
     a: "Yes. We provide 2D layouts and 3D renders (if required) before starting the final work.",
   },
+  {
+    q: "Still have questions?",
+    a: "If your question is not listed here, feel free to reach out to Das Design Arch Studio. We’ll be happy to guide you and provide the right solution for your project.",
+  },
 ];
 
 export default function FAQ() {
-  const [openIndex, setOpenIndex] = useState(0);
+  const [openIndex, setOpenIndex] = useState(-1);
 
   const toggle = (i) => {
     setOpenIndex(openIndex === i ? -1 : i);
@@ -35,7 +39,7 @@ export default function FAQ() {
     <section className="faq-section" id="faq">
       <div className="faq-container">
         <h2 className="faq-title">Frequently Asked Questions</h2>
-        <p className="faq-subtitle">Everything you need to know about our services</p>
+        <p className="faq-subtitle">Everything you need to know about Das Design Arch Studio</p>
 
         <div className="faq-list">
           {faqData.map((item, i) => {
@@ -46,7 +50,6 @@ export default function FAQ() {
                   <span>{item.q}</span>
 
                   <span className={`faq-icon ${isOpen ? "rotate" : ""}`}>
-                    {/* chevron down */}
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
                       <path
                         d="M6 9l6 6 6-6"
@@ -59,7 +62,7 @@ export default function FAQ() {
                   </span>
                 </button>
 
-                <div className="faq-answer-wrapper" style={{ maxHeight: isOpen ? 200 : 0 }}>
+                <div className="faq-answer-wrapper">
                   <div className="faq-answer">{item.a}</div>
                 </div>
               </div>

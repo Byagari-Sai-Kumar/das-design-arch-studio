@@ -1,5 +1,5 @@
 .testimonials-section {
-    background: var(--color-bg-alt);
+    background: var(--color-bg-main);
     text-align: center;
     scroll-margin-top: var(--navbar-height);
     }
@@ -28,7 +28,7 @@
     /* ---------- CARD ---------- */
 
     .testimonial-card {
-    background: var(--color-bg-main);
+    background: var(--color-bg-alt);
     padding: 35px 30px;
     border-radius: 16px;
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
@@ -117,6 +117,9 @@
     }
     .testimonials-section {
         padding: 20px 60px;
+    }
+    .testimonials-subtext {
+        margin-bottom: 30px;
     }
     .testimonial-card{
         width: 400px;

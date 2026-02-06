@@ -12,7 +12,7 @@
   }
   
   .contact-card {
-    background: #fbf7f2;
+    background: var(--color-bg-alt);
     border: 1px solid #f0e7dd;
     border-radius: 14px;
     padding: 26px;
@@ -28,7 +28,6 @@
   .contact-form label {
     font-size: 14px;
     font-weight: 600;
-    color: #2b2b2b;
   }
   
   .contact-form input,
@@ -36,7 +35,7 @@
     width: 100%;
     border-radius: 10px;
     border: 1px solid #e7dfd6;
-    background: #fff;
+    background: #F7F5F0;
     padding: 12px 12px;
     outline: none;
     font-size: 14px;
@@ -55,7 +54,7 @@
     padding: 13px 14px;
     font-weight: 700;
     cursor: pointer;
-    background: #f0b429;
+    background: #CBB9A4;
     color: #fff;
   }
   
@@ -70,7 +69,7 @@
   }
   
   .info-card {
-    background: #ffffff;
+    background: var(--color-bg-alt);
     border: 1px solid #eee4d8;
     border-radius: 12px;
     padding: 18px;
@@ -78,6 +77,10 @@
     gap: 14px;
     align-items: flex-start;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+  }
+
+  .contact-mode{
+    color: var(--color-primary);
   }
   
   .icon-circle {
@@ -100,7 +103,6 @@
     margin: 0 0 6px;
     font-size: 15px;
     font-weight: 800;
-    color: #222;
   }
   
   .info-card p {
@@ -189,7 +191,7 @@
 
     @media (min-width: 1025px) {
       .contact-section{
-        padding: 50px 20px;
+        padding: 20px 20px;
       }
     }
 
