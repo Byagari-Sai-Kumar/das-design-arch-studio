@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import {useNavigate} from 'react-router-dom';
 import heroInteriorOne from '../../assets/home/images/heroInteriorOne.jpg';
 import heroInteriorTwo from '../../assets/home/images/heroInteriorTwo.jpg';
 import heroInteriorThree from '../../assets/home/images/heroInteriorThree.jpg';
@@ -11,30 +12,36 @@ const slides = [
         image: heroInteriorOne,
         title: "Designing Modern Living Spaces",
         highlight: "Architecture with Purpose",
-        button: "View Portfolio"
+        button: "View Portfolio",
+        path: "/portfolio"
     },
     {
         image: heroInteriorTwo,
         title: "Where Design Meets Function",
         highlight: "Creative Architecture",
-        button: "Our Services"
+        button: "Our Services",
+        path: "/our-services"
     },
     {
         image: heroInteriorThree,
         title: "Shaping Future Skylines",
         highlight: "Innovative Concepts",
-        button: "Explore Projects"
+        button: "Visit Gallery",
+        path: "/gallery"
     },
     {
         image: heroInteriorFour,
         title: "Inspired Interior & Exterior Design",
         highlight: "Timeless Spaces",
-        button: "Contact Us"
+        button: "Contact Us",
+        path: "/contact-us"
     }
 ];
 
 const Home = () => {
     const [current, setCurrent] = useState(0);
+
+    const navigate = useNavigate();
 
     // auto slide
     useEffect(() => {
@@ -63,7 +70,7 @@ const Home = () => {
                 <span className="title-highlight-span">{slide.highlight}</span>
                 </h1>
 
-                <button className="hero-btn">
+                <button className="hero-btn" onClick={() => navigate(slide.path)}>
                 {slide.button}
                 </button>
             </div>

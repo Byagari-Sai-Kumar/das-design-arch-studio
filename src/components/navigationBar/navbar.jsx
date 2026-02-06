@@ -1,4 +1,4 @@
-import { NavLink, useLocation } from "react-router-dom";
+import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import dasDesignLogoTwo from '../../assets/navbar/logo/dasDesignLogoTwo.png'
 import { MdOutlinePermPhoneMsg } from "react-icons/md";
@@ -34,6 +34,12 @@ const Navbar = () => {
         //setDesktopOpen(false);
     }
 
+    const navigate = useNavigate();
+
+    const handleGetInTouch = (path) => {
+        navigate("/", { state: { scrollTo: "contact-us" } });
+    }
+
     return(
         <nav className={`navbar ${showTransparent ? "navbar--transparent" : "navbar--solid"}`}>
             <div className="logo">
@@ -48,14 +54,12 @@ const Navbar = () => {
                 <li><NavLink to="/testimonials">Testimonials</NavLink></li>
                 <li><NavLink to="/faq">FAQ</NavLink></li>
                 <li>
-                    <NavLink to="/contact-us" onClick={closeAll}>
-                        <button className="get-in-touch-button">
-                            Get In Touch 
-                            <span className="get-in-touch-phoneicon">
-                                <MdOutlinePermPhoneMsg />
-                            </span>
-                        </button>
-                    </NavLink>
+                    <button className="get-in-touch-button" onClick={handleGetInTouch}>
+                        Get In Touch 
+                        <span className="get-in-touch-phoneicon">
+                            <MdOutlinePermPhoneMsg />
+                        </span>
+                    </button>
                 </li>
             </ul>
 
@@ -70,7 +74,9 @@ const Navbar = () => {
                         <NavLink to="/gallery" onClick={closeAll}>Projects</NavLink>
                         <NavLink to="/testimonials" onClick={closeAll}>Testimonials</NavLink>
                         <NavLink to="/faq" onClick={closeAll}>FAQ</NavLink>
-                        <NavLink to="/contact-us" onClick={closeAll}>Contact Us</NavLink>
+                        <NavLink to="/" 
+                            state={{ scrollTo: "contact-us" }} 
+                            onClick={closeAll}>Contact Us</NavLink>
                     </div>
                 )
             }

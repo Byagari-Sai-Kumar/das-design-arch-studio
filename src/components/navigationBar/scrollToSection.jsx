@@ -5,7 +5,6 @@ import About from '../about/about'
 import ContactUs from '../contactUs/contactUs'
 import Faq from '../faq/faq'
 import Gallery from '../gallery/gallery'
-import HowWeWork from '../howWeWork/homeWeWork'
 import Portfolio from '../portfolio/portfolio'
 import Services from '../services/services'
 import Testimonials from '../testimonials/testimonials'
@@ -43,7 +42,6 @@ const ScrollToSection = () => {
             <About/>
             <Services/>
             <Portfolio/>
-            <HowWeWork/>
             <Gallery/>
             <Testimonials/>
             <Faq/>
