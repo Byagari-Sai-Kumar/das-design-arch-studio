@@ -50,7 +50,7 @@ const Navbar = () => {
             <ul className="nav-links desktop">
                 <li><NavLink to="/what-we-do">What We Do</NavLink></li>
                 <li><NavLink to="/our-services">Our Services</NavLink></li>
-                <li><NavLink to="/gallery">Projects</NavLink></li>
+                <li><NavLink to="/gallery">Gallery</NavLink></li>
                 <li><NavLink to="/testimonials">Testimonials</NavLink></li>
                 <li><NavLink to="/faq">FAQ</NavLink></li>
                 <li>
@@ -71,7 +71,7 @@ const Navbar = () => {
                     <div className="mobile-menu">
                         <NavLink to="/what-we-do" onClick={closeAll}>What We Do</NavLink>
                         <NavLink to="/our-services" onClick={closeAll}>Our Services</NavLink>
-                        <NavLink to="/gallery" onClick={closeAll}>Projects</NavLink>
+                        <NavLink to="/gallery" onClick={closeAll}>Gallery</NavLink>
                         <NavLink to="/testimonials" onClick={closeAll}>Testimonials</NavLink>
                         <NavLink to="/faq" onClick={closeAll}>FAQ</NavLink>
                         <NavLink to="/" 
