@@ -1,6 +1,6 @@
 import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
-import dasDesignLogoFour from '../../assets/navbar/logo/dasDesignLogoFour.png'
+import dasDesignLogoFive from '../../assets/navbar/logo/dasDesignLogoFive.PNG'
 import { MdOutlinePermPhoneMsg } from "react-icons/md";
 import { IoMenu } from "react-icons/io5";
 import './navbar.css'
@@ -44,7 +44,7 @@ const Navbar = () => {
         <nav className={`navbar ${showTransparent ? "navbar--transparent" : "navbar--solid"}`}>
             <div className="logo">
                 <NavLink to="/">
-                    <img src={dasDesignLogoFour} className="logo-image"/>
+                    <img src={dasDesignLogoFive} className="logo-image"/>
                 </NavLink>
             </div>
             <ul className="nav-links desktop">
