@@ -1,6 +1,14 @@
 .contact-section {
     scroll-margin-top: var(--navbar-height);
   }
+
+  .our-services-subheading{
+    margin-top: 10px;
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 20px;
+    text-align: center;
+  }
   
   .contact-container {
     max-width: 1150px;
@@ -192,6 +200,12 @@
     @media (min-width: 1025px) {
       .contact-section{
         padding: 20px 20px;
+      }
+      .our-services-heading{
+        margin-bottom: 10px;
+      }
+      .our-services-subheading{
+        margin-bottom: 30px;
       }
     }
 

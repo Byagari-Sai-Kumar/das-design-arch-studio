@@ -47,6 +47,7 @@ const ContactUs = () => {
       {/* CONTACT SECTION */}
       <section id="contact-us" className="contact-section">
         <h2 className="our-services-heading">Contact Us</h2>
+        <p className="our-services-subheading">Everything you need to know about Das Design Arch Studio</p>
 
         <div className="contact-container">
           {/* LEFT: FORM */}
@@ -164,7 +165,7 @@ const ContactUs = () => {
                 </svg>
               </div>
               <div>
-                <h4 className="contact-mode">Location</h4>
+                <h4 className="contact-mode">Office Location</h4>
                 <p>
                   Flat No 202, 3-6-521/1, Himayatnagar Hyderabad, Telangana 500029
                 </p>

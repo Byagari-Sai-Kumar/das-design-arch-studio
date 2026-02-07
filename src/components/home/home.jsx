@@ -12,14 +12,14 @@ const slides = [
         image: heroInteriorOne,
         title: "Designing Modern Living Spaces",
         highlight: "Architecture with Purpose",
-        button: "View Portfolio",
+        button: "WHAT DO YOU WANT TO BUILD",
         path: "/portfolio"
     },
     {
         image: heroInteriorTwo,
         title: "Where Design Meets Function",
         highlight: "Creative Architecture",
-        button: "Our Services",
+        button: "WHAT DO YOU WANT TO BUILD",
         path: "/our-services"
     },
     {
@@ -70,8 +70,11 @@ const Home = () => {
                 <span className="title-highlight-span">{slide.highlight}</span>
                 </h1>
 
-                <button className="hero-btn" onClick={() => navigate(slide.path)}>
-                {slide.button}
+                <button className="hero-btn" onClick={() => navigate("/our-services")}>
+                    WHAT DO YOU WANT TO BUILD
+                    <span className="what-do-you-build-icon">
+                        <BsArrowRight />
+                    </span>
                 </button>
             </div>
             </div>

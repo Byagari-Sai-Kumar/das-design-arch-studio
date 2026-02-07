@@ -61,17 +61,31 @@
 .hero-btn {
   margin-top: 30px;
   padding: 14px 36px;
-  background: var(--color-primary);
+  /* background: var(--color-primary); */
+  background: transparent;
   border: none;
   color: #fff;
   font-size: 15px;
+  font-style: italic;
   cursor: pointer;
   letter-spacing: 1px;
-  transition: background 0.3s ease;
+  /* transition: background 0.3s ease; */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.what-do-you-build-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;  /* increase icon size */
+  padding-left: 10px;
 }
 
 .hero-btn:hover {
-  background: var(--color-secondary);
+  /* background: var(--color-secondary); */
+  background: transparent;
 }
 
 /* arrows */
@@ -130,6 +144,10 @@
 
 .dot.active {
   background: var(--color-secondary);
+}
+
+.hero-arrow{
+  background: transparent;
 }
 
 /* responsive */

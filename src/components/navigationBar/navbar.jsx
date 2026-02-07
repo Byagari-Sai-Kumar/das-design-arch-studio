@@ -1,6 +1,6 @@
 import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
-import dasDesignLogoTwo from '../../assets/navbar/logo/dasDesignLogoTwo.png'
+import dasDesignLogoFour from '../../assets/navbar/logo/dasDesignLogoFour.png'
 import { MdOutlinePermPhoneMsg } from "react-icons/md";
 import { IoMenu } from "react-icons/io5";
 import './navbar.css'
@@ -36,7 +36,7 @@ const Navbar = () => {
 
     const navigate = useNavigate();
 
-    const handleGetInTouch = (path) => {
+    const handleGetInTouch = () => {
         navigate("/", { state: { scrollTo: "contact-us" } });
     }
 
@@ -44,12 +44,43 @@ const Navbar = () => {
         <nav className={`navbar ${showTransparent ? "navbar--transparent" : "navbar--solid"}`}>
             <div className="logo">
                 <NavLink to="/">
-                    <img src={dasDesignLogoTwo} className="logo-image"/>
+                    <img src={dasDesignLogoFour} className="logo-image"/>
                 </NavLink>
             </div>
             <ul className="nav-links desktop">
                 <li><NavLink to="/what-we-do">What We Do</NavLink></li>
-                <li><NavLink to="/our-services">Our Services</NavLink></li>
+                <li
+                    className="services-dropdown"
+                    onMouseEnter={() => setDesktopOpen(true)}
+                    onMouseLeave={() => setDesktopOpen(false)}
+                    >
+                    <NavLink to="/our-services">Our Services</NavLink>
+
+                    {desktopOpen && (
+                        <ul className="services-dropdown-menu">
+                        <li>
+                            <NavLink to="/portfolio" state={{ portfolioCategory: "architecture" }}>
+                            Architecture
+                            </NavLink>
+                        </li>
+                        <li>
+                            <NavLink to="/portfolio" state={{ portfolioCategory: "interiors" }}>
+                            Interiors
+                            </NavLink>
+                        </li>
+                        <li>
+                            <NavLink to="/portfolio" state={{ portfolioCategory: "planning" }}>
+                            Construction Planning
+                            </NavLink>
+                        </li>
+                        <li>
+                            <NavLink to="/portfolio" state={{ portfolioCategory: "visualization" }}>
+                            3D Visualization
+                            </NavLink>
+                        </li>
+                        </ul>
+                    )}
+                </li>
                 <li><NavLink to="/gallery">Gallery</NavLink></li>
                 <li><NavLink to="/testimonials">Testimonials</NavLink></li>
                 <li><NavLink to="/faq">FAQ</NavLink></li>

@@ -2,31 +2,54 @@ import "./about.css";
 
 import aboutUsImage from "../../assets/aboutUs/images/aboutUsImageOne.jpg";
 
-import teamMemberOne from "../../assets/aboutUs/images/teamMemberOne.jpeg";
-import teamMemberTwo from "../../assets/aboutUs/images/teamMemberTwo.jpg";
+import AbhinayaDas from "../../assets/aboutUs/images/AbhinayaDas.png";
+import AkhileshDas from "../../assets/aboutUs/images/AkhileshDas.jpg";
+import AbhilashDas from "../../assets/aboutUs/images/AbhilashDas.jpg";
+import AbhitejDas from "../../assets/aboutUs/images/AbhitejDas.png";
 
 const teamMembers = [
     {
         name: "Abhinaya Das",
-        role: "Principal Architect",
+        role: "Construction Manager",
         experience: "12+ Years Experience",
-        rating: 5,
-        image: teamMemberOne,
+        //rating: 5,
+        image: AbhinayaDas,
         description: `
-            Abhi Teja Das is the founding principal architect of Das Design Arch Studio with over 12 years of professional experience in residential and commercial architecture.
-            He oversees project planning, design approvals, client coordination and site execution, ensuring high design quality and on-time delivery. Rahul is widely appreciated for translating client requirements into practical and visually refined spaces.
+            We oversee every phase of construction, from initial planning and resource coordination to on-site execution and final handover.  
+            Our team manages budgets, mitigates risks, and enforces strict safety protocols while collaborating. From site oversight to final handover, we deliver on time and on budget.
             `
     },
     {
         name: "Akhilesh Das",
         role: "Senior Architect",
         experience: "5+ Years Experience",
-        rating: 4.5,
-        image: teamMemberTwo,
+        //rating: 4.5,
+        image: AkhileshDas,
         description: `
             Akhilesh Das is a Senior Architect specializing in interior design and 3D visualization with more than 5 years of industry experience.
             He holds a Bachelor’s degree in Architecture and has strong expertise in space planning, lighting design, and material selection. Neha has delivered over 120 residential and commercial interior projects with a focus on modern, functional layouts.
             `
+    },
+    {
+    name: "Abhilash Das",
+    role: "3D Visualizer",
+    experience: "5+ Years Experience",
+    //rating: 4.5,
+    image: AbhilashDas,
+    description: `
+        We provide high-quality 3D visualization services for residential and commercial projects, helping clients clearly visualize their spaces before execution. Our expertise covers both interior and exterior home designs, ensuring accurate, realistic, and detailed representations that bring concepts to life. 
+        Using industry-standard software such as Autodesk 3ds Max and Autodesk Maya, we create visually compelling 3D models, renders, and walkthroughs that reflect design intent, materials, lighting, and spatial planning with precision.
+        `
+    },
+    {
+    name: "Abhitej Das",
+    role: "Designer",
+    experience: "5+ Years Experience",
+    //rating: 4.5,
+    image: AbhitejDas,
+    description: `
+        We lead the creative vision of the studio, shaping concepts that balance aesthetics, functionality, and context. We ensure every project reflects our design philosophy through thoughtful spatial planning, innovation.
+        `
     }
     ];
 
@@ -73,10 +96,10 @@ const teamMembers = [
                                 <h4 className="team-member-name">{member.name}</h4>
                                 <p className="team-role">{member.role}</p>
                                 <p className="team-exp">{member.experience}</p>
-                                <div className="team-rating">
+                                {/* <div className="team-rating">
                                     {"★".repeat(Math.floor(member.rating))}
                                     {member.rating % 1 !== 0 && "☆"}
-                                </div>
+                                </div> */}
                                 <p className="team-desc">{member.description}</p>
                             </div>
                         </div>
@@ -129,10 +152,10 @@ const teamMembers = [
 
                             <p className="team-desc">{member.description}</p>
 
-                            <div className="team-rating">
+                            {/* <div className="team-rating">
                                 {"★".repeat(Math.floor(member.rating))}
                                 {member.rating % 1 !== 0 && "☆"}
-                            </div>
+                            </div> */}
                             </div>
 
                             {/* IMAGE */}
