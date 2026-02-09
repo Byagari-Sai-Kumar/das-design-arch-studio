@@ -1,14 +1,13 @@
 import "./footer.css";
-import { FaInstagram, FaLinkedinIn } from "react-icons/fa";
+import { FaInstagram, FaLinkedinIn, FaWhatsapp } from "react-icons/fa";
+import logo from "../../assets/navbar/logo/dasDesignLogoTwo.png";
 const Footer = () => {
   return (
     <footer className="footer">
       <div className="footer-container">
         {/* Left */}
         <div className="footer-brand">
-          <h2>
-            Design Arch <span>Studio</span>
-          </h2>
+          <img src={logo} alt="Design Arch Studio" />
           <p>
             Transforming spaces into elegant experiences. <br />
             Your trusted partner in creating beautiful, functional interiors.
@@ -29,8 +28,10 @@ const Footer = () => {
         <div className="footer-social">
           <h4>Follow Us</h4>
           <div className="social-icons">
-            <a href="#"><FaInstagram /></a>
-            <a href="#"><FaLinkedinIn /></a>
+            <a href="https://www.instagram.com/" target="_blank" rel="noreferrer" aria-label="Instagram"><FaInstagram /></a>
+            <a href="https://www.linkedin.com/" target="_blank" rel="noreferrer" aria-label="LinkedIn"><FaLinkedinIn /></a>
+            <a href="https://www.threads.net/@designarchstudio" target="_blank" rel="noreferrer" className="threads-link" aria-label="Threads">Threads</a>
+            <a href="https://wa.me/918019898569" target="_blank" rel="noreferrer" aria-label="WhatsApp"><FaWhatsapp /></a>
           </div>
         </div>
       </div>

@@ -106,11 +106,21 @@ const Portfolio = () => {
       setIsFlipping(false);
     }
 
-    setTimeout(() => {
-      const section = document.getElementById("portfolio");
-      if (section) section.scrollIntoView({ behavior: "smooth" });
-    }, 150);
-  }, [initialCategory]);
+    // Only auto-scroll to portfolio when navigation explicitly requested it
+    // (via state) or when the current pathname is the portfolio route.
+    const shouldScroll = !!(
+      location.state?.scrollTo === "portfolio" ||
+      location.state?.portfolioCategory ||
+      location.pathname.includes("portfolio")
+    );
+
+    if (shouldScroll) {
+      setTimeout(() => {
+        const section = document.getElementById("portfolio");
+        if (section) section.scrollIntoView({ behavior: "smooth" });
+      }, 150);
+    }
+  }, [initialCategory, location]);
 
   const pages = portfolioData[category];
   const currentPage = pages[pageIndex];

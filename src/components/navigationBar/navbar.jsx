@@ -1,6 +1,7 @@
 import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import dasDesignLogoFive from '../../assets/navbar/logo/dasDesignLogoFive.PNG'
+import footerLogo from '../../assets/navbar/logo/dasDesignLogoTwo.png'
 import { MdOutlinePermPhoneMsg } from "react-icons/md";
 import { IoMenu } from "react-icons/io5";
 import './navbar.css'
@@ -13,21 +14,42 @@ const Navbar = () => {
     const pathname = location.pathname.replace(/\/$/, "") || "/";
     const isHomePage = pathname === "/";
 
-    // On home page: transparent only while hero is in view (100vh), solid after hero is fully scrolled past
+    // Make navbar transparent whenever the hero section is visible in the
+    // viewport. Use IntersectionObserver so this works whether the user
+    // navigated via router or by scrolling — fixes case where transparency
+    // only toggled after clicking the home logo.
     useEffect(() => {
-        if (!isHomePage) return;
-        const heroHeight = () => window.innerHeight; // hero section is 100vh
-        const checkScroll = () => setScrolledPastHero(window.scrollY >= heroHeight());
-        checkScroll();
-        window.addEventListener("scroll", checkScroll, { passive: true });
-        window.addEventListener("resize", checkScroll);
-        return () => {
-            window.removeEventListener("scroll", checkScroll);
-            window.removeEventListener("resize", checkScroll);
-        };
-    }, [isHomePage]);
+        const hero = document.querySelector('.hero-section');
+        if (!hero) {
+            // no hero on the page -> keep navbar solid
+            setScrolledPastHero(true);
+            return;
+        }
 
-    const showTransparent = isHomePage && !scrolledPastHero;
+        // when hero is at least 40% visible, treat as "in hero"
+        const observer = new IntersectionObserver(
+            (entries) => {
+                const e = entries[0];
+                // if hero is intersecting by threshold, we are NOT scrolled past it
+                setScrolledPastHero(!e.isIntersecting);
+            },
+            { threshold: 0.4 }
+        );
+
+        observer.observe(hero);
+
+        // initial check
+        const rect = hero.getBoundingClientRect();
+        setScrolledPastHero(!(rect.top < window.innerHeight && rect.bottom > 0));
+
+        return () => observer.disconnect();
+    }, [location.pathname]);
+
+    // Show transparent whenever the hero is visible (not scrolled past).
+    // This avoids requiring the pathname to be exactly '/' so returning
+    // to the top of the page (hero visible) makes the navbar transparent
+    // even if the route didn't change.
+    const showTransparent = !scrolledPastHero;
 
     const closeAll = () => {
         setMobileOpen(false);
@@ -44,7 +66,12 @@ const Navbar = () => {
         <nav className={`navbar ${showTransparent ? "navbar--transparent" : "navbar--solid"}`}>
             <div className="logo">
                 <NavLink to="/">
-                    <img src={dasDesignLogoFive} className="logo-image"/>
+                    {/* show home logo while on home hero, otherwise use footer logo */}
+                    <img
+                        src={isHomePage && !scrolledPastHero ? dasDesignLogoFive : footerLogo}
+                        className="logo-image"
+                        alt="Design Arch Studio"
+                    />
                 </NavLink>
             </div>
             <ul className="nav-links desktop">
