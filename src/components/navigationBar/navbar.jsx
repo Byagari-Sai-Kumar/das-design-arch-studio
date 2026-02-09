@@ -39,7 +39,30 @@ const Navbar = () => {
         };
     }, [isHomePage]);
 
-    const showTransparent = isHomePage && !scrolledPastHero;
+    useEffect(() => {
+        // when hero is at least 40% visible, treat as "in hero"
+        const observer = new IntersectionObserver(
+            (entries) => {
+                const e = entries[0];
+                // if hero is intersecting by threshold, we are NOT scrolled past it
+                setScrolledPastHero(!e.isIntersecting);
+            },
+            { threshold: 0.4 }
+        );
+
+        const hero = document.querySelector(".hero-section");
+        if (hero) {
+            observer.observe(hero);
+        }
+
+        return () => observer.disconnect();
+    }, [location.pathname]);
+
+    // Show transparent whenever the hero is visible (not scrolled past).
+    // This avoids requiring the pathname to be exactly '/' so returning
+    // to the top of the page (hero visible) makes the navbar transparent
+    // even if the route didn't change.
+    const showTransparent = !scrolledPastHero;
 
     const closeAll = () => {
         setMobileOpen(false);

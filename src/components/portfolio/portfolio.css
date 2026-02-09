@@ -90,9 +90,9 @@
   top: 0;
   bottom: 0;
   width: 50%;
-  z-index: 20;
+  z-index: 30;
 
-  perspective: 1400px;
+  perspective: 2200px; /* deeper perspective for stronger 3D */
   pointer-events: none;
   display: none;
 
@@ -126,6 +126,18 @@
   backface-visibility: hidden;
   overflow: hidden;
   transform-style: preserve-3d;
+  transition: box-shadow 0.35s ease, transform 0.35s ease;
+}
+
+/* set transform origins for more realistic fold */
+.page-turn.next .page-front,
+.page-turn.next .page-back {
+  transform-origin: left center;
+}
+
+.page-turn.prev .page-front,
+.page-turn.prev .page-back {
+  transform-origin: right center;
 }
 
 .page-front img,
@@ -134,6 +146,29 @@
   height: 100%;
   object-fit: cover;
   transform: translateZ(0);
+}
+
+/* subtle highlight that travels across the page during flip */
+.page-front::before,
+.page-back::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 40%;
+  right: -40%;
+  background: linear-gradient(90deg, rgba(255,255,255,0.06), rgba(255,255,255,0.22), rgba(255,255,255,0.06));
+  transform: skewX(-12deg);
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 0.6s cubic-bezier(0.2,0,0,1), opacity 0.45s ease;
+}
+
+.page-turn.flipping .page-front::before,
+.page-turn.flipping .page-back::before {
+  opacity: 1;
+  right: 10%;
+  transform: skewX(-6deg) translateX(-6%);
 }
 
 /* back side */
@@ -161,6 +196,36 @@
   opacity: 1;
 }
 
+/* thin edge / paper thickness for realism */
+.page-turn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 8px;
+  right: -8px;
+  background: linear-gradient(90deg, rgba(0,0,0,0.16), rgba(255,255,255,0.06));
+  opacity: 0;
+  transition: opacity 0.25s ease, transform 0.75s cubic-bezier(0.4,0,0.2,1);
+  pointer-events: none;
+}
+
+.page-turn.next.flipping::before {
+  opacity: 1;
+  transform: translateX(-8px);
+}
+
+.page-turn.prev::before {
+  left: -8px;
+  right: auto;
+  transform: translateX(8px);
+}
+
+.page-turn.prev.flipping::before {
+  opacity: 1;
+  transform: translateX(8px);
+}
+
 /* ---------------- FAST SMOOTH FLIP ANIMATION ---------------- */
 
 .page-turn.next.flipping {
@@ -173,35 +238,55 @@
 
 @keyframes flipNext {
   0% {
-    transform: rotateY(0deg);
-    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.12);
+    transform: rotateY(0deg) translateZ(0);
+    box-shadow: -6px 0 18px rgba(0, 0, 0, 0.12);
   }
 
-  50% {
-    transform: rotateY(-90deg);
-    box-shadow: -35px 0 55px rgba(0, 0, 0, 0.25);
+  20% {
+    transform: rotateY(-30deg) translateZ(18px) translateX(2%);
+    box-shadow: -18px 0 40px rgba(0, 0, 0, 0.18);
+  }
+
+  45% {
+    transform: rotateY(-95deg) translateZ(38px) translateX(4%) skewY(-1deg);
+    box-shadow: -48px 0 120px rgba(0, 0, 0, 0.42);
+  }
+
+  70% {
+    transform: rotateY(-140deg) translateZ(18px) translateX(2%) skewY(-0.6deg);
+    box-shadow: -28px 0 60px rgba(0, 0, 0, 0.28);
   }
 
   100% {
-    transform: rotateY(-180deg);
-    box-shadow: -5px 0 18px rgba(0, 0, 0, 0.12);
+    transform: rotateY(-180deg) translateZ(0);
+    box-shadow: -6px 0 18px rgba(0, 0, 0, 0.12);
   }
 }
 
 @keyframes flipPrev {
   0% {
-    transform: rotateY(0deg);
-    box-shadow: 5px 0 15px rgba(0, 0, 0, 0.12);
+    transform: rotateY(0deg) translateZ(0);
+    box-shadow: 6px 0 18px rgba(0, 0, 0, 0.12);
   }
 
-  50% {
-    transform: rotateY(90deg);
-    box-shadow: 35px 0 55px rgba(0, 0, 0, 0.25);
+  20% {
+    transform: rotateY(30deg) translateZ(18px) translateX(-2%);
+    box-shadow: 18px 0 40px rgba(0, 0, 0, 0.18);
+  }
+
+  45% {
+    transform: rotateY(95deg) translateZ(38px) translateX(-4%) skewY(1deg);
+    box-shadow: 48px 0 120px rgba(0, 0, 0, 0.42);
+  }
+
+  70% {
+    transform: rotateY(140deg) translateZ(18px) translateX(-2%) skewY(0.6deg);
+    box-shadow: 28px 0 60px rgba(0, 0, 0, 0.28);
   }
 
   100% {
-    transform: rotateY(180deg);
-    box-shadow: 5px 0 18px rgba(0, 0, 0, 0.12);
+    transform: rotateY(180deg) translateZ(0);
+    box-shadow: 6px 0 18px rgba(0, 0, 0, 0.12);
   }
 }
 
