@@ -1,87 +1,91 @@
 import { useState, useEffect } from "react";
-import "./gallery.css";
+import "./ourWorks.css";
 import { IoClose } from "react-icons/io5";
 import { BsArrowLeft, BsArrowRight } from "react-icons/bs";
 
 // example images (replace with your real ones)
-import galleryImageOne from "../../assets/gallery/galleryImageOne.jpg";
-import galleryImageTwo from "../../assets/gallery/galleryImageTwo.jpg";
-import galleryImageThree from "../../assets/gallery/galleryImageThree.jpg";
-import galleryImageFour from "../../assets/gallery/galleryImageFour.jpg";
-import galleryImageFive from "../../assets/gallery/galleryImageFive.jpg";
-import galleryImageSix from "../../assets/gallery/galleryImageSix.jpg";
+import archImageOne from "../../assets/ourWorks/architecture/projectOne/imageOne.jpg";
+import intImageOne from "../../assets/ourWorks/interior/projectOne/imageOne.jpg";
+import planImageOne from "../../assets/ourWorks/planning/projectOne/imageOne.jpg";
+import visualImageOne from "../../assets/ourWorks/visualization/projectOne/imageOne.jpg";
+import galleryImageOne from "../../assets/ourWorks/galleryImageOne.jpg";
+import galleryImageTwo from "../../assets/ourWorks/galleryImageTwo.jpg";
+import galleryImageThree from "../../assets/ourWorks/galleryImageThree.jpg";
+import galleryImageFour from "../../assets/ourWorks/galleryImageFour.jpg";
+import galleryImageFive from "../../assets/ourWorks/galleryImageFive.jpg";
+import galleryImageSix from "../../assets/ourWorks/galleryImageSix.jpg";
 
 const projects = [
   {
     id: 1,
-    category: "Residential",
-    subCategory: "Living Room",
+    category: "Architecture",
+    subCategory: "Residential • Living Room",
     title: "Modern Living Room Project",
     description:
       "A premium modern living room design with warm tones, elegant lighting, and balanced furniture layout for comfort and luxury.",
-    coverImage: galleryImageOne,
+    coverImage: archImageOne,
     images: [galleryImageOne, galleryImageTwo, galleryImageThree],
   },
   {
     id: 2,
-    category: "Residential",
-    subCategory: "Bedroom",
+    category: "Interiors",
+    subCategory: "Residential • Bedroom",
     title: "Luxury Bedroom Interiors",
     description:
       "A peaceful bedroom design with minimal color palette, modern wardrobes, and ambient lighting for a calm atmosphere.",
-    coverImage: galleryImageFour,
+    coverImage: intImageOne,
     images: [galleryImageFour, galleryImageFive, galleryImageSix],
   },
   {
-    id: 2,
-    category: "Residential",
-    subCategory: "Bedroom",
+    id: 3,
+    category: "Construction Planning",
+    subCategory: "Residential • Bedroom",
     title: "Luxury Bedroom Interiors",
     description:
       "A peaceful bedroom design with minimal color palette, modern wardrobes, and ambient lighting for a calm atmosphere.",
-    coverImage: galleryImageTwo,
+    coverImage: planImageOne,
     images: [galleryImageFour, galleryImageFive, galleryImageSix],
   },
   {
-    id: 2,
-    category: "Residential",
-    subCategory: "Bedroom",
+    id: 4,
+    category: "3D Visualization",
+    subCategory: "Residential • Bedroom",
     title: "Luxury Bedroom Interiors",
     description:
       "A peaceful bedroom design with minimal color palette, modern wardrobes, and ambient lighting for a calm atmosphere.",
-    coverImage: galleryImageOne,
+    coverImage: visualImageOne,
     images: [galleryImageFour, galleryImageFive, galleryImageSix],
   },
-  {
-    id: 2,
-    category: "Residential",
-    subCategory: "Bedroom",
-    title: "Luxury Bedroom Interiors",
-    description:
-      "A peaceful bedroom design with minimal color palette, modern wardrobes, and ambient lighting for a calm atmosphere.",
-    coverImage: galleryImageFive,
-    images: [galleryImageFour, galleryImageFive, galleryImageSix],
-  },
-  {
-    id: 2,
-    category: "Residential",
-    subCategory: "Bedroom",
-    title: "Luxury Bedroom Interiors",
-    description:
-      "A peaceful bedroom design with minimal color palette, modern wardrobes, and ambient lighting for a calm atmosphere.",
-    coverImage: galleryImageTwo,
-    images: [galleryImageFour, galleryImageFive, galleryImageSix],
-  },
+  // {
+  //   id: 2,
+  //   category: "Residential",
+  //   subCategory: "Bedroom",
+  //   title: "Luxury Bedroom Interiors",
+  //   description:
+  //     "A peaceful bedroom design with minimal color palette, modern wardrobes, and ambient lighting for a calm atmosphere.",
+  //   coverImage: galleryImageFive,
+  //   images: [galleryImageFour, galleryImageFive, galleryImageSix],
+  // },
+  // {
+  //   id: 2,
+  //   category: "Residential",
+  //   subCategory: "Bedroom",
+  //   title: "Luxury Bedroom Interiors",
+  //   description:
+  //     "A peaceful bedroom design with minimal color palette, modern wardrobes, and ambient lighting for a calm atmosphere.",
+  //   coverImage: galleryImageTwo,
+  //   images: [galleryImageFour, galleryImageFive, galleryImageSix],
+  // },
 ];
 
-export default function Gallery() {
+export default function OurWorks() {
   const [selectedProject, setSelectedProject] = useState(null);
   const [activeIndex, setActiveIndex] = useState(0);
 
   const openProject = (project) => {
     setSelectedProject(project);
     setActiveIndex(0);
-    document.body.style.overflow = "hidden";
+    //document.body.style.overflow = "hidden";
   };
 
   const closeProject = () => {
@@ -117,8 +121,8 @@ export default function Gallery() {
   }, [selectedProject]);
 
   return (
-    <section className="gallery-section" id="gallery">
-      <h2 className="gallery-heading">Gallery</h2>
+    <section className="gallery-section" id="our-works">
+      <h2 className="gallery-heading">Our Works</h2>
       <p className="gallery-subheading">
         Explore our latest architectural and interior design projects
       </p>

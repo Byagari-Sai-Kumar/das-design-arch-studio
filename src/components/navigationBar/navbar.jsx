@@ -1,6 +1,7 @@
 import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
-import dasDesignLogoFive from '../../assets/navbar/logo/dasDesignLogoFive.PNG'
+import dasDesignLogoOne from '../../assets/navbar/logo/dasDesignLogoOne.PNG'
+import dasDesignLogoTwo from '../../assets/navbar/logo/dasDesignLogoTwo.png'
 import { MdOutlinePermPhoneMsg } from "react-icons/md";
 import { IoMenu } from "react-icons/io5";
 import './navbar.css'
@@ -13,14 +14,25 @@ const Navbar = () => {
     const pathname = location.pathname.replace(/\/$/, "") || "/";
     const isHomePage = pathname === "/";
 
-    // On home page: transparent only while hero is in view (100vh), solid after hero is fully scrolled past
     useEffect(() => {
         if (!isHomePage) return;
-        const heroHeight = () => window.innerHeight; // hero section is 100vh
-        const checkScroll = () => setScrolledPastHero(window.scrollY >= heroHeight());
+
+        const heroSection = document.querySelector(".hero-section");
+
+        const checkScroll = () => {
+            if (!heroSection) return;
+
+            const heroBottom = heroSection.getBoundingClientRect().bottom;
+
+            // if hero bottom is above navbar => solid
+            setScrolledPastHero(heroBottom <= 80);
+        };
+
         checkScroll();
+
         window.addEventListener("scroll", checkScroll, { passive: true });
         window.addEventListener("resize", checkScroll);
+
         return () => {
             window.removeEventListener("scroll", checkScroll);
             window.removeEventListener("resize", checkScroll);
@@ -44,7 +56,10 @@ const Navbar = () => {
         <nav className={`navbar ${showTransparent ? "navbar--transparent" : "navbar--solid"}`}>
             <div className="logo">
                 <NavLink to="/">
-                    <img src={dasDesignLogoFive} className="logo-image"/>
+                    <img src={showTransparent ? dasDesignLogoOne : dasDesignLogoTwo} 
+                    className="logo-image"
+                    alt="Das Design Logo"
+                    />
                 </NavLink>
             </div>
             <ul className="nav-links desktop">
@@ -81,7 +96,7 @@ const Navbar = () => {
                         </ul>
                     )}
                 </li>
-                <li><NavLink to="/gallery">Gallery</NavLink></li>
+                <li><NavLink to="/our-works">Our Works</NavLink></li>
                 <li><NavLink to="/testimonials">Testimonials</NavLink></li>
                 <li><NavLink to="/faq">FAQ</NavLink></li>
                 <li>
@@ -102,7 +117,7 @@ const Navbar = () => {
                     <div className="mobile-menu">
                         <NavLink to="/what-we-do" onClick={closeAll}>What We Do</NavLink>
                         <NavLink to="/our-services" onClick={closeAll}>Our Services</NavLink>
-                        <NavLink to="/gallery" onClick={closeAll}>Gallery</NavLink>
+                        <NavLink to="/our-works" onClick={closeAll}>Our Works</NavLink>
                         <NavLink to="/testimonials" onClick={closeAll}>Testimonials</NavLink>
                         <NavLink to="/faq" onClick={closeAll}>FAQ</NavLink>
                         <NavLink to="/" 

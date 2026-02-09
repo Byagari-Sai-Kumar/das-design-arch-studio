@@ -1,11 +1,9 @@
 import "./about.css";
-
-import aboutUsImage from "../../assets/aboutUs/images/aboutUsImageOne.jpg";
-
-import AbhinayaDas from "../../assets/aboutUs/images/AbhinayaDas.png";
+import aboutUsImage from "../../assets/aboutUs/images/aboutUsImage.jpg";
+import AbhinayaDas from "../../assets/aboutUs/images/AbhinayaDas.jpg";
 import AkhileshDas from "../../assets/aboutUs/images/AkhileshDas.jpg";
 import AbhilashDas from "../../assets/aboutUs/images/AbhilashDas.jpg";
-import AbhitejDas from "../../assets/aboutUs/images/AbhitejDas.png";
+import AbhitejDas from "../../assets/aboutUs/images/AbhitejDas.jpg";
 
 const teamMembers = [
     {
@@ -20,14 +18,14 @@ const teamMembers = [
             `
     },
     {
-        name: "Akhilesh Das",
-        role: "Senior Architect",
+        name: "Ar. Akhilesh Das",
+        role: "REGD. L. NO. CA/2023/167135 | Senior Architect",
         experience: "5+ Years Experience",
         //rating: 4.5,
         image: AkhileshDas,
         description: `
-            Akhilesh Das is a Senior Architect specializing in interior design and 3D visualization with more than 5 years of industry experience.
-            He holds a Bachelor’s degree in Architecture and has strong expertise in space planning, lighting design, and material selection. Neha has delivered over 120 residential and commercial interior projects with a focus on modern, functional layouts.
+            Ar. Akhilesh Das is an architect with over 5 years of professional experience in delivering innovative and context-driven solutions across architecture, interiors, and 
+            landscape design. With a strong foundation in architectural principles and a keen eye for detail, he has successfully worked on a diverse range of residential, commercial, and landscape projects.
             `
     },
     {

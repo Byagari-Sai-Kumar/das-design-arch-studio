@@ -2,81 +2,132 @@ import React, { useEffect, useMemo, useState } from "react";
 import "./portfolio.css";
 import { useLocation } from "react-router-dom";
 
-import arch1 from "../../assets/portfolio/arch1.jpg";
-import arch2 from "../../assets/portfolio/arch2.jpg";
-import int1 from "../../assets/portfolio/int1.jpg";
-import int2 from "../../assets/portfolio/int2.jpg";
-import plan1 from "../../assets/portfolio/plan1.jpg";
-import plan2 from "../../assets/portfolio/plan2.jpg";
-import vis1 from "../../assets/portfolio/vis1.jpg";
-import vis2 from "../../assets/portfolio/vis2.jpg";
+import arch3 from "../../assets/portfolio/arch3.jpg";
+import arch4 from "../../assets/portfolio/arch4.jpg";
+import int3 from "../../assets/portfolio/int3.jpg";
+import int4 from "../../assets/portfolio/int4.jpg";
+import plan3 from "../../assets/portfolio/plan3.jpg";
+import plan4 from "../../assets/portfolio/plan4.jpg";
+import vis4 from "../../assets/portfolio/vis4.jpg";
+import vis5 from "../../assets/portfolio/vis5.jpg";
 
 const portfolioData = {
   architecture: [
     {
-      title: "Modern Residential Design",
-      subtitle: "Elegant exterior and space planning",
+      title: "Conceptual Plans & Schematic Designs",
+      subtitle: "Design Development & Detailed Drawings",
       description:
-        "Our architectural projects focus on structural clarity, modern elevations, and space planning that balances beauty with functionality. Each design is carefully planned to maximize ventilation, lighting, and modern aesthetics.",
-      image: arch1,
+        `Develop conceptual plans and schematic designs that respond to client briefs, site conditions, and project intent. Carry out design development and detailed drawings, refining concepts into 
+        buildable and well-coordinated solutions. Prepare construction documentation and GFC (Good for Construction) drawings to ensure clarity and accuracy during execution.`,
+      image: arch3,
     },
     {
-      title: "Contemporary Elevation Concept",
-      subtitle: "Premium facade design",
-      description:
-        "We design elevations that create a lasting impression using clean geometry, modern materials, and strong proportions. Our focus is to deliver timeless exteriors that look premium and remain functional.",
-      image: arch2,
+      title: "",
+      subtitle: "",
+      description:"",
+      subHeadineOne : "Mood boards & Design Presentations",
+      subHeadineOneDescription : "Create mood boards and design presentations to communicate design ideas, themes, and material palettes effectively.",
+      subHeadineTwo: "Material Selection & Specifications",
+      subHeadineTwoDescription: "Lead material selection and specification, balancing aesthetics, performance, and budget considerations.",
+      subHeadineThree: "Client Meetings & Design discussions",
+      subHeadineThreeDescription: "Conduct client meetings and design discussions, ensuring alignment at every stage of the project.",
+      subHeadineFour: "Coordinate with consultants",
+      subHeadineFourDescription: "Coordinate with consultants including structural, MEP, and landscape teams for integrated design delivery.",
+      subHeadineFive: "Oversee on-site execution",
+      subHeadineFiveDescription: "Oversee on-site execution, ensuring adherence to approved drawings, quality standards, and design intent.",
+      image: arch4,
     },
   ],
 
   interiors: [
     {
-      title: "Luxury Living Room Interiors",
-      subtitle: "Comfort meets modern aesthetics",
-      description:
-        "Our interior projects blend lighting, furniture layout, textures, and warm tones to create elegant living environments. We balance comfort and luxury to ensure every space feels welcoming and premium.",
-      image: int1,
+      title: "Interior Design & Space Planning",
+      subtitle: "Luxury interiors with functionality",
+      description: `We provide complete interior design services with a strong focus on space planning, comfort, and premium aesthetics. 
+      Our approach includes conceptual designs, mood boards, material selections, and execution-ready drawings. 
+      We ensure each interior space reflects the client’s lifestyle while maintaining functionality, elegance, and long-term durability.`,
+      image: int3,
     },
     {
-      title: "Bedroom Interior Styling",
-      subtitle: "Minimal yet premium design",
-      description:
-        "We design bedroom spaces that are calming, stylish, and practical with proper storage planning and ambient lighting. Every design is personalized to match your lifestyle and comfort needs.",
-      image: int2,
+      title: "",
+      subtitle: "",
+      description:"",
+      subHeadineOne: "Space Planning & Furniture Layout",
+      subHeadineOneDescription:
+        "Plan furniture layouts and circulation flow to maximize comfort, usability, and movement within the space.",
+      subHeadineTwo: "False Ceiling & Lighting Design",
+      subHeadineTwoDescription:
+        "Design ceiling concepts and lighting layouts including ambient, task, and accent lighting for a premium finish.",
+      subHeadineThree: "Material & Color Palette Selection",
+      subHeadineThreeDescription:
+        "Select wall finishes, flooring, laminates, textures, and color palettes that match the design theme and budget.",
+      subHeadineFour: "Custom Furniture & Wardrobe Design",
+      subHeadineFourDescription:
+        "Create customized wardrobes, TV units, kitchen modules, and storage solutions with modern aesthetics.",
+      subHeadineFive: "Execution Supervision & Styling",
+      subHeadineFiveDescription:
+        "Supervise execution work on-site and ensure the final interiors match the approved design and quality standards.",
+        image: int4,
     },
   ],
 
   planning: [
     {
-      title: "Construction Planning & Execution",
-      subtitle: "Efficient workflow & site supervision",
-      description:
-        "From project planning to execution support, we ensure the construction stays on schedule, within budget, and follows quality standards. We coordinate materials, timelines, and on-site processes smoothly.",
-      image: plan1,
+      title: "End to End delivery of Turnkey construction projects",
+      subtitle: "Pre-Construction Plannings",
+      description: `Our construction planning services ensure that every project is executed with discipline, accuracy, and efficiency. 
+      We manage workflow coordination, supervise execution, and maintain quality standards. 
+      Our planning approach reduces delays, avoids cost overruns, and ensures the project is delivered with perfect finishing.`,
+      image: plan3,
     },
     {
-      title: "Detailed Floor Planning",
-      subtitle: "Maximizing space utility",
-      description:
-        "Our planning ensures each space is optimized for movement, ventilation, lighting, and daily comfort. We focus on practical layouts that are modern, efficient, and future-proof.",
-      image: plan2,
+      title: "",
+      subtitle: "",
+      description:"",
+      subHeadineOne: "Project Management",
+      subHeadineOneDescription:
+        "Conduct site visits to understand conditions, measurements, and requirements before starting execution planning.",
+      subHeadineTwo: "Lead Client Coordination",
+      subHeadineTwoDescription:
+        "Prepare project timelines and work schedules to ensure timely completion and smooth coordination on-site.",
+      subHeadineThree: "Interior Fit-out execution",
+      subHeadineThreeDescription:
+        "Coordinate with vendors, contractors, and suppliers to ensure materials and manpower availability.",
+      subHeadineFour: "",
+      subHeadineFourDescription:"",
+      subHeadineFive: "",
+      subHeadineFiveDescription:"",
+      image: plan4,
     },
   ],
 
   visualization: [
     {
-      title: "3D Rendering & Visualization",
-      subtitle: "See your project before building",
-      description:
-        "We provide high-quality 3D views and realistic renders to help clients understand the final output before execution begins. This helps reduce confusion and improves decision making.",
-      image: vis1,
+      title: "3D Visualization & Rendering Services",
+      subtitle: "Realistic design previews before execution",
+      description: `We offer professional 3D visualization services to help clients experience their project before execution. 
+      Our renders provide a realistic preview of materials, lighting, furniture, and overall space feel. 
+      This reduces confusion, increases confidence, and ensures final execution matches expectations.`,
+      image: vis4,
     },
     {
-      title: "Realistic Walkthrough Concepts",
-      subtitle: "Better clarity for clients",
-      description:
-        "Our walkthrough visuals help clients explore their future spaces. It gives a realistic feel of design, lighting, and materials, making it easier to finalize designs confidently.",
-      image: vis2,
+      title: "",
+      subtitle: "",
+      description:"",
+      subHeadineOne: "High Quality 3D Visualizations",
+      subHeadineOneDescription:
+        "Create realistic exterior renders showcasing elevation, materials, landscaping, and overall building look.",
+      subHeadineTwo: "Mood boards & Design Presentations",
+      subHeadineTwoDescription:
+        "Provide interior renders with accurate lighting, furniture placement, textures, and decorative styling.",
+      subHeadineThree: "3D Walkthroughs",
+      subHeadineThreeDescription:
+        "Apply realistic textures and material mapping for flooring, walls, furniture, and facades.",
+      subHeadineFour: "",
+      subHeadineFourDescription:"",
+      subHeadineFive: "",
+      subHeadineFiveDescription:"",
+      image: vis5,
     },
   ],
 };
@@ -220,9 +271,27 @@ const Portfolio = () => {
 
         {/* RIGHT PAGE */}
         <div className="portfolio-page right">
-          <h3>{currentPage.title}</h3>
-          <h4>{currentPage.subtitle}</h4>
-          <p>{currentPage.description}</p>
+          {currentPage.title && <h3>{currentPage.title}</h3>}
+          {currentPage.subtitle && <h4>{currentPage.subtitle}</h4>}
+          {currentPage.description && <p>{currentPage.description}</p>}
+          {currentPage.subHeadineOne && (
+            <div className="portfolio-highlights">
+              <h5>{currentPage.subHeadineOne}</h5>
+              <p>{currentPage.subHeadineOneDescription}</p>
+
+              <h5>{currentPage.subHeadineTwo}</h5>
+              <p>{currentPage.subHeadineTwoDescription}</p>
+
+              <h5>{currentPage.subHeadineThree}</h5>
+              <p>{currentPage.subHeadineThreeDescription}</p>
+
+              <h5>{currentPage.subHeadineFour}</h5>
+              <p>{currentPage.subHeadineFourDescription}</p>
+
+              <h5>{currentPage.subHeadineFive}</h5>
+              <p>{currentPage.subHeadineFiveDescription}</p>
+            </div>
+          )}
 
           <div className="portfolio-page-number">
             Page {pageIndex + 1} of {pages.length}
