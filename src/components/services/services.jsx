@@ -3,6 +3,7 @@ import "./services.css";
 import { FaHome, FaBuilding, FaHammer } from "react-icons/fa";
 import { Md3dRotation } from "react-icons/md";
 import { BsArrowRight } from "react-icons/bs";
+import { useNavigate } from "react-router-dom";
 
 const iconMap = {
     FaHome: FaHome,
@@ -43,6 +44,25 @@ const iconMap = {
     ];
 
     const Services = () => {
+    const navigate = useNavigate();
+
+    const titleToCategory = {
+        "Architecture": "architecture",
+        "Interiors": "interiors",
+        "Construction Planning": "planning",
+        "3D Visualization": "visualization",
+    };
+
+    const handleKnowMore = (serviceTitle) => {
+        const category = titleToCategory[serviceTitle] || "architecture";
+        navigate("/", { 
+            state: { 
+                scrollTo: "portfolio", 
+                portfolioCategory: category 
+            } 
+        });
+    };
+
     return (
         <section id="our-services" className="services-section">
         <h2 className="our-services-heading">Our Services</h2>
@@ -63,7 +83,12 @@ const iconMap = {
                     {service.description}
                 </p>
 
-                <button className="services-knowmore-btn">
+                <button 
+                    className="services-knowmore-btn"
+                    onClick={() => handleKnowMore(service.title)}
+                    type="button"
+                    aria-label={`Learn more about ${service.title}`}
+                >
                     Know more
                     <span className="services-knowmore-btn-arrow">
                     <BsArrowRight />
