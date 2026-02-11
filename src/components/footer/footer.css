@@ -72,28 +72,10 @@
     color: #ffffff;
     font-size: 16px;
     transition: all 0.3s ease;
+    text-decoration: none;
   }
   
   .social-icons a:hover {
-    background: #f5b942;
-    color: #000;
-  }
-
-  /* Threads link styled to visually match icon buttons */
-  .social-icons .threads-link {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    height: 40px;
-    padding: 0 12px;
-    background: #3b3b3b;
-    color: #fff;
-    border-radius: 20px;
-    font-size: 13px;
-    text-decoration: none;
-  }
-
-  .social-icons .threads-link:hover {
     background: #f5b942;
     color: #000;
   }

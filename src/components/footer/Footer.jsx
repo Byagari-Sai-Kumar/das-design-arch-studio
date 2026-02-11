@@ -1,5 +1,5 @@
 import "./footer.css";
-import { FaInstagram, FaLinkedinIn, FaWhatsapp } from "react-icons/fa";
+import { FaInstagram, FaLinkedinIn, FaWhatsapp, FaThreads } from "react-icons/fa6";
 import logo from "../../assets/navbar/logo/dasDesignLogoTwo.png";
 const Footer = () => {
   return (
@@ -30,7 +30,7 @@ const Footer = () => {
           <div className="social-icons">
             <a href="https://www.instagram.com/" target="_blank" rel="noreferrer" aria-label="Instagram"><FaInstagram /></a>
             <a href="https://www.linkedin.com/" target="_blank" rel="noreferrer" aria-label="LinkedIn"><FaLinkedinIn /></a>
-            <a href="https://www.threads.net/@designarchstudio" target="_blank" rel="noreferrer" className="threads-link" aria-label="Threads">Threads</a>
+            <a href="https://www.threads.net/@designarchstudio" target="_blank" rel="noreferrer" aria-label="Threads"><FaThreads /></a>
             <a href="https://wa.me/918019898569" target="_blank" rel="noreferrer" aria-label="WhatsApp"><FaWhatsapp /></a>
           </div>
         </div>
