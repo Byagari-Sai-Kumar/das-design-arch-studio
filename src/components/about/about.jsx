@@ -52,9 +52,14 @@ const teamMembers = [
             ],
             education: [
                 {
-                    degree: "B.tech in Construction Management",
-                    institution: "Malla Reddy College of Engineering and Technology",
-                    year: "2012"
+                    degree: "B.Tech : Civil Engineering",
+                    institution: "Malla Reddy Engineering College (MREC)",
+                    year: "2012-2016"
+                },
+                {
+                    degree: "Masters : MS in Civil Engineering",
+                    institution: "Bradley University",
+                    year: "2016-2018"
                 }
             ]
         }
@@ -107,7 +112,7 @@ const teamMembers = [
             education: [
                 {
                     degree: "B.Arch (Bachelor of Architecture)",
-                    institution: "School of Architecture",
+                    institution: "Aurora's Design Academy",
                     year: "2021"
                 },
                 {

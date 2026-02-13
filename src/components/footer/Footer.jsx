@@ -28,7 +28,7 @@ const Footer = () => {
         <div className="footer-social">
           <h4>Follow Us</h4>
           <div className="social-icons">
-            <a href="https://www.instagram.com/" target="_blank" rel="noreferrer" aria-label="Instagram"><FaInstagram /></a>
+            <a href="https://www.instagram.com/designarchstudio__?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noreferrer" aria-label="Instagram"><FaInstagram /></a>
             <a href="https://www.linkedin.com/" target="_blank" rel="noreferrer" aria-label="LinkedIn"><FaLinkedinIn /></a>
             <a href="https://www.threads.net/@designarchstudio" target="_blank" rel="noreferrer" aria-label="Threads"><FaThreads /></a>
             <a href="https://wa.me/918019898569" target="_blank" rel="noreferrer" aria-label="WhatsApp"><FaWhatsapp /></a>
