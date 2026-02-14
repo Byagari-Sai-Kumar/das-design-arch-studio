@@ -118,7 +118,6 @@
 .team-desc {
   font-size: 16px;
   line-height: 1.7;
-  margin-bottom: 20px;
   color: #555;
 }
 
@@ -222,8 +221,6 @@
     .team-desc {
         width: 90%;
         text-align: justify;
-        margin-bottom: 20px;
-
     }
 }
 
@@ -379,7 +376,7 @@
     font-weight: 600;
     cursor: pointer;
     transition: all 0.3s ease;
-    margin-top: 10px;
+    margin: 20px 0px;
 }
 
 .team-know-more-btn:hover {

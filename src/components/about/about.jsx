@@ -10,7 +10,7 @@ import AbhitejDas from "../../assets/aboutUs/images/AbhitejDas.jpg";
 const teamMembers = [
     {
         name: "Abhinaya Das",
-        role: "Construction Manager",
+        role: "Senior Construction Planning Manager",
         experience: "12+ Years Experience",
         image: AbhinayaDas,
         description: `
@@ -336,7 +336,7 @@ const teamMembers = [
                                         className="team-know-more-btn"
                                         onClick={() => handleKnowMore(member)}
                                     >
-                                        Know More / About
+                                        Know more
                                     </button>
                                 )}
                             </div>
@@ -395,7 +395,7 @@ const teamMembers = [
                                     className="team-know-more-btn"
                                     onClick={() => handleKnowMore(member)}
                                 >
-                                    Know More / About
+                                    Know more
                                 </button>
                             )}
 
