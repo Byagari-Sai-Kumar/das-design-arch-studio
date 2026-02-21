@@ -1,17 +1,14 @@
-/* ================================
-   TESTIMONIALS SECTION
-================================ */
-
 .testimonials-section {
-    padding: 90px 20px;
-    background: #fbf7f2;
+    padding: 20px 60px;
+    background: var(--color-bg-main);
+    scroll-margin-top: var(--navbar-height);
 }
 
 .testimonials-heading {
     text-align: center;
     font-size: 44px;
     font-weight: 700;
-    color: #9a6b51;
+    color: var(--color-primary);
     margin-bottom: 10px;
 }
 
@@ -29,7 +26,7 @@
 ================================ */
 
 .ts-carousel {
-    max-width: 980px;
+    width: 100%;
     margin: 0 auto;
     position: relative;
 }
@@ -49,6 +46,7 @@
 
     /* Hide scrollbar */
     scrollbar-width: none;
+    background: transparent;
 }
 
 .ts-track::-webkit-scrollbar {
@@ -61,7 +59,7 @@
 
 .ts-card {
     scroll-snap-align: center;
-    background: #f6efe7;
+    background: var(--color-bg-alt);
     border-radius: 18px;
     padding: 36px 28px;
     min-height: 300px;
@@ -92,6 +90,7 @@
     color: #2d2a28;
     max-width: 560px;
     margin: 0 auto 26px;
+    font-style: italic;
 }
 
 /* ================================
@@ -104,7 +103,7 @@
 
 .ts-name {
     font-weight: 700;
-    color: #9a6b51;
+    color: var(--color-primary);
     letter-spacing: 0.2px;
 }
 
@@ -121,6 +120,10 @@
 @media (max-width: 768px) {
     .testimonials-heading {
         font-size: 34px;
+    }
+
+    .testimonials-section {
+        padding: 10px 30px;
     }
 
     .ts-track {

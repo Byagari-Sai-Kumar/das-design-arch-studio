@@ -1,6 +1,6 @@
 .portfolio-section {
   padding: 20px 50px;
-  background: var(--color-bg-alt);
+  background: var(--color-bg-main);
   text-align: center;
   scroll-margin-top: var(--navbar-height);
 }
