@@ -483,20 +483,7 @@ const teamMembers = [
                                 </div>
                             )}
 
-                            {selectedMember.resume?.education && selectedMember.resume.education.length > 0 && (
-                                <div className="resume-section">
-                                    <h3>Education</h3>
-                                    <div className="education-list">
-                                        {selectedMember.resume.education.map((edu, idx) => (
-                                            <div key={idx} className="education-item">
-                                                <h4>{edu.degree}</h4>
-                                                <p className="education-institution">{edu.institution}</p>
-                                                <p className="education-year">{edu.year}</p>
-                                            </div>
-                                        ))}
-                                    </div>
-                                </div>
-                            )}
+                            {/* Education section intentionally removed per request */}
                         </div>
                     </div>
                 </div>
