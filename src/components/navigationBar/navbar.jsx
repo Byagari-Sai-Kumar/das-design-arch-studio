@@ -119,12 +119,14 @@ const Navbar = () => {
                         </ul>
                     )}
                 </li>
+                <li><NavLink to="/portfolio">Portfolio</NavLink></li>
+                <li><NavLink to="/our-team">Our Team</NavLink></li>
                 <li><NavLink to="/our-works">Our Works</NavLink></li>
                 <li><NavLink to="/testimonials">Testimonials</NavLink></li>
                 <li><NavLink to="/faq">FAQ</NavLink></li>
                 <li>
                     <button className="get-in-touch-button" onClick={handleGetInTouch}>
-                        Get In Touch 
+                        Get In Touch
                         <span className="get-in-touch-phoneicon">
                             <MdOutlinePermPhoneMsg />
                         </span>
@@ -140,11 +142,13 @@ const Navbar = () => {
                     <div className="mobile-menu">
                         <NavLink to="/what-we-do" onClick={closeAll}>What We Do</NavLink>
                         <NavLink to="/our-services" onClick={closeAll}>Our Services</NavLink>
+                        <NavLink to="/portfolio" onClick={closeAll}>Portfolio</NavLink>
+                        <NavLink to="/our-team" onClick={closeAll}>Our Team</NavLink>
                         <NavLink to="/our-works" onClick={closeAll}>Our Works</NavLink>
                         <NavLink to="/testimonials" onClick={closeAll}>Testimonials</NavLink>
                         <NavLink to="/faq" onClick={closeAll}>FAQ</NavLink>
-                        <NavLink to="/" 
-                            state={{ scrollTo: "contact-us" }} 
+                        <NavLink to="/"
+                            state={{ scrollTo: "contact-us" }}
                             onClick={closeAll}>Contact Us</NavLink>
                     </div>
                 )

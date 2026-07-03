@@ -1,0 +1,120 @@
+/* ============================================================
+   NavigationButtons — prev / next / submit row
+   ============================================================ */
+
+.nav-buttons-wrapper {
+  padding: 24px 48px 40px;
+  border-top: 1px solid rgba(161, 129, 103, 0.1);
+  margin-top: 8px;
+}
+
+.nav-buttons-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+/* ── Base button ─────────────────────────────────────────── */
+
+.nav-btn {
+  height: 48px;
+  padding: 0 28px;
+  border-radius: 12px;
+  border: none;
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease, opacity 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.nav-btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  transform: none !important;
+}
+
+/* Previous */
+.nav-btn--prev {
+  background: var(--color-bg-alt);
+  color: var(--color-primary);
+  border: 1.5px solid #e4d8cc;
+}
+
+.nav-btn--prev:hover:not(:disabled) {
+  background: var(--color-soft);
+  transform: translateX(-2px);
+}
+
+/* Next */
+.nav-btn--next {
+  background: var(--color-primary);
+  color: #fff;
+  box-shadow: 0 3px 14px rgba(161, 129, 103, 0.3);
+}
+
+.nav-btn--next:hover:not(:disabled) {
+  background: var(--color-text-dark);
+  transform: translateX(2px);
+  box-shadow: 0 5px 20px rgba(58, 47, 40, 0.25);
+}
+
+/* Submit */
+.nav-btn--submit {
+  background: linear-gradient(135deg, var(--color-primary) 0%, #8a6b50 100%);
+  color: #fff;
+  padding: 0 36px;
+  font-size: 15px;
+  box-shadow: 0 4px 18px rgba(161, 129, 103, 0.35);
+  letter-spacing: 0.5px;
+}
+
+.nav-btn--submit:hover:not(:disabled) {
+  background: linear-gradient(135deg, var(--color-text-dark) 0%, #5a3d28 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(58, 47, 40, 0.28);
+}
+
+/* Spinner inside submit */
+.nav-btn-spinner {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.spinner-ring {
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+  display: inline-block;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ── Responsive ──────────────────────────────────────────── */
+
+@media (max-width: 767px) {
+  .nav-buttons-wrapper {
+    padding: 20px 20px 32px;
+  }
+
+  .nav-btn {
+    height: 44px;
+    padding: 0 20px;
+    font-size: 13px;
+  }
+
+  .nav-btn--submit {
+    padding: 0 24px;
+  }
+}

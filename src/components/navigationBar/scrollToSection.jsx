@@ -2,12 +2,14 @@ import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import Home from '../home/home'
 import About from '../about/about'
-import ContactUs from '../contactUs/contactUs'
-import Faq from '../faq/faq'
-import OurWorks from '../ourWorks/ourWorks'
-import Portfolio from '../portfolio/portfolio'
+import Team from '../team/team'
+import CtaBanner from '../ctaBanner/ctaBanner'
 import Services from '../services/services'
+import Portfolio from '../portfolio/portfolio'
+import OurWorks from '../ourWorks/ourWorks'
 import Testimonials from '../testimonials/testimonials'
+import Faq from '../faq/faq'
+import ContactUs from '../contactUs/contactUs'
 
 const ScrollToSection = () => {
     const location = useLocation();
@@ -42,6 +44,8 @@ const ScrollToSection = () => {
             <About/>
             <Services/>
             <Portfolio/>
+            <CtaBanner/>
+            <Team/>
             <OurWorks/>
             <Testimonials/>
             <Faq/>

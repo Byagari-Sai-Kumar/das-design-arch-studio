@@ -1,0 +1,212 @@
+/* ── CTA Banner Section ────────────────────────────────────────────────────── */
+
+.cta-banner {
+    background: var(--color-bg-main);
+    scroll-margin-top: var(--navbar-height);
+}
+
+.cta-banner-inner {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 48px;
+}
+
+/* ── Text block ──────────────────────────────────────────────────────────── */
+
+.cta-banner-text {
+    text-align: center;
+}
+
+.cta-eyebrow {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--color-primary);
+    margin-bottom: 16px;
+}
+
+.cta-heading {
+    font-size: clamp(28px, 4vw, 44px);
+    font-weight: 700;
+    color: var(--color-primary);
+    line-height: 1.2;
+    letter-spacing: -0.5px;
+    margin-bottom: 20px;
+}
+
+.cta-sub {
+    font-size: 15px;
+    color: #555;
+    line-height: 1.75;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* ── 3-step cards ────────────────────────────────────────────────────────── */
+
+.cta-steps {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 0;
+    width: 100%;
+}
+
+.cta-step {
+    display: flex;
+    align-items: flex-start;
+    flex: 1;
+    max-width: 260px;
+    background: var(--color-bg-alt);
+    border-radius: 16px;
+    padding: 24px 20px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.cta-step:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.15);
+}
+
+.cta-step-icon {
+    flex-shrink: 0;
+    font-size: 32px;
+    color: var(--color-primary);
+    margin-right: 14px;
+    margin-top: 2px;
+}
+
+.cta-step-body {
+    flex: 1;
+}
+
+.cta-step-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-bottom: 8px;
+}
+
+.cta-step-desc {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.6;
+}
+
+.cta-step-arrow {
+    flex-shrink: 0;
+    align-self: center;
+    font-size: 22px;
+    color: var(--color-primary);
+    margin: 0 12px;
+    opacity: 0.5;
+}
+
+/* ── Action block ────────────────────────────────────────────────────────── */
+
+.cta-banner-action {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+}
+
+.cta-main-btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 14px 40px;
+    background: var(--color-primary);
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    font-family: "Montserrat", sans-serif;
+    cursor: pointer;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+.cta-main-btn:hover {
+    opacity: 0.85;
+    transform: translateY(-2px);
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.15);
+}
+
+.cta-main-btn:active {
+    transform: scale(0.98);
+}
+
+.cta-reassurance {
+    font-size: 12px;
+    color: #555;
+    letter-spacing: 0.3px;
+}
+
+/* ── Responsive ──────────────────────────────────────────────────────────── */
+
+/* Mobile */
+@media (max-width: 767px) {
+    .cta-banner {
+        padding: 10px 30px;
+    }
+
+    .cta-banner-inner {
+        gap: 32px;
+    }
+
+    .cta-steps {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 16px;
+    }
+
+    .cta-step {
+        max-width: 100%;
+    }
+
+    .cta-step-arrow {
+        display: none;
+    }
+
+    .cta-main-btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* Tablet */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .cta-banner {
+        padding: 20px 50px;
+    }
+
+    .cta-banner-inner {
+        gap: 40px;
+    }
+
+    .cta-steps {
+        gap: 0;
+    }
+
+    .cta-step {
+        max-width: 200px;
+        padding: 20px 16px;
+    }
+
+    .cta-step-arrow {
+        margin: 0 6px;
+    }
+}
+
+/* Desktop */
+@media (min-width: 1025px) {
+    .cta-banner {
+        padding: 20px 60px;
+    }
+}

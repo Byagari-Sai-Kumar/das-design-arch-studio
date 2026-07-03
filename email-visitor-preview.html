@@ -1,0 +1,151 @@
+<title>Visitor Email — Design Arch Studio</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  body { margin: 0; padding: 32px 16px; background: #eee8e0; font-family: 'Helvetica Neue', Arial, sans-serif; }
+  .meta { font-size: 11px; color: #b0a097; margin-bottom: 20px; text-align: center; }
+
+  /* ── Responsive ── */
+  @media only screen and (max-width: 600px) {
+    .email-shell { width: 100% !important; border-radius: 12px !important; }
+    .email-header { padding: 32px 24px !important; }
+    .email-body { padding: 28px 20px 24px !important; }
+    .email-footer { padding: 16px 20px !important; }
+    .summary-table td { font-size: 12px !important; }
+    .next-step-text p { font-size: 12px !important; }
+    .contact-line { font-size: 12px !important; }
+    .step-number { width: 20px !important; height: 20px !important; font-size: 10px !important; margin-right: 10px !important; }
+    h1 { font-size: 22px !important; }
+    .body-lead { font-size: 14px !important; }
+    .body-sub { font-size: 13px !important; }
+  }
+</style>
+
+<p class="meta">⬇ Preview — Visitor Email (what the client receives in their inbox)</p>
+
+<table width="100%" cellpadding="0" cellspacing="0" style="border-collapse:collapse;">
+  <tr>
+    <td align="center">
+      <table class="email-shell" cellpadding="0" cellspacing="0" style="max-width:560px;width:100%;background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 4px 32px rgba(58,47,40,0.13);border-collapse:collapse;">
+
+        <!-- Header -->
+        <tr>
+          <td class="email-header" style="background:linear-gradient(135deg,#a18167 0%,#7a5e48 100%);padding:40px;text-align:center;">
+            <p style="margin:0 0 16px;font-size:13px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.7);">Design Arch Studio</p>
+            <h1 style="margin:0 0 6px;font-size:26px;color:#fff;font-weight:700;letter-spacing:-0.3px;">Thank You, Rahul!</h1>
+            <p style="margin:0;font-size:14px;color:rgba(255,255,255,0.75);">Your consultation request has been received.</p>
+          </td>
+        </tr>
+
+        <!-- Body -->
+        <tr>
+          <td class="email-body" style="padding:40px 40px 32px;text-align:center;">
+            <p class="body-lead" style="font-size:16px;color:#3a2f28;line-height:1.75;margin:0 0 12px;font-weight:500;">
+              We've received your project brief at <strong>Design Arch Studio</strong>.
+            </p>
+            <p class="body-sub" style="font-size:14px;color:#7a6a5e;line-height:1.75;margin:0 0 32px;">
+              Our team will carefully review your requirements and get back to you within <strong style="color:#3a2f28;">24 hours</strong> to discuss the next steps for your project.
+            </p>
+
+            <!-- What happens next -->
+            <table width="100%" cellpadding="0" cellspacing="0" style="background:#f7f5f0;border-radius:12px;margin-bottom:24px;border-collapse:collapse;">
+              <tr>
+                <td style="padding:20px 24px 8px;">
+                  <p style="margin:0;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#a18167;">What Happens Next</p>
+                </td>
+              </tr>
+              <tr>
+                <td style="padding:8px 24px;">
+                  <table width="100%" cellpadding="0" cellspacing="0" style="border-collapse:collapse;">
+                    <tr>
+                      <td valign="top" width="34">
+                        <div class="step-number" style="width:24px;height:24px;border-radius:50%;background:#a18167;color:#fff;font-size:11px;font-weight:700;text-align:center;line-height:24px;margin-right:14px;">1</div>
+                      </td>
+                      <td class="next-step-text" style="padding-bottom:14px;">
+                        <p style="margin:0 0 3px;font-size:13px;font-weight:700;color:#3a2f28;">Our architect reviews your brief</p>
+                        <p style="margin:0;font-size:12px;color:#9a8a7e;line-height:1.5;">We study your plot details, budget, style preference, and family requirements.</p>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td valign="top" width="34">
+                        <div class="step-number" style="width:24px;height:24px;border-radius:50%;background:#a18167;color:#fff;font-size:11px;font-weight:700;text-align:center;line-height:24px;margin-right:14px;">2</div>
+                      </td>
+                      <td class="next-step-text" style="padding-bottom:14px;">
+                        <p style="margin:0 0 3px;font-size:13px;font-weight:700;color:#3a2f28;">We schedule a free discovery call</p>
+                        <p style="margin:0;font-size:12px;color:#9a8a7e;line-height:1.5;">A 30-minute conversation to align on your vision and answer any questions.</p>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td valign="top" width="34">
+                        <div class="step-number" style="width:24px;height:24px;border-radius:50%;background:#a18167;color:#fff;font-size:11px;font-weight:700;text-align:center;line-height:24px;margin-right:14px;">3</div>
+                      </td>
+                      <td class="next-step-text">
+                        <p style="margin:0 0 3px;font-size:13px;font-weight:700;color:#3a2f28;">We present an initial concept</p>
+                        <p style="margin:0;font-size:12px;color:#9a8a7e;line-height:1.5;">A proposal tailored to your brief — design direction, timeline, and investment overview.</p>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <tr><td style="height:16px;"></td></tr>
+            </table>
+
+            <!-- Submission summary -->
+            <table width="100%" cellpadding="0" cellspacing="0" style="background:#faf9f6;border:1px solid #ede4d8;border-radius:10px;margin-bottom:28px;border-collapse:collapse;">
+              <tr>
+                <td style="padding:16px 20px 10px;">
+                  <p style="margin:0;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#9a8a7e;">Your Submission Summary</p>
+                </td>
+              </tr>
+              <tr>
+                <td style="padding:0 20px 16px;">
+                  <table class="summary-table" width="100%" cellpadding="0" cellspacing="0" style="border-collapse:collapse;">
+                    <tr>
+                      <td style="font-size:12px;color:#9a8a7e;padding:4px 0;width:120px;">Project Type</td>
+                      <td style="font-size:12px;color:#3a2f28;font-weight:600;padding:4px 0;">Residential · G+2</td>
+                    </tr>
+                    <tr>
+                      <td style="font-size:12px;color:#9a8a7e;padding:4px 0;">Design Style</td>
+                      <td style="font-size:12px;color:#3a2f28;font-weight:600;padding:4px 0;">Contemporary</td>
+                    </tr>
+                    <tr>
+                      <td style="font-size:12px;color:#9a8a7e;padding:4px 0;">Plot Size</td>
+                      <td style="font-size:12px;color:#3a2f28;font-weight:600;padding:4px 0;">200 sqyd · East Facing</td>
+                    </tr>
+                    <tr>
+                      <td style="font-size:12px;color:#9a8a7e;padding:4px 0;">Budget</td>
+                      <td style="font-size:12px;color:#3a2f28;font-weight:600;padding:4px 0;">₹ 4500000</td>
+                    </tr>
+                    <tr>
+                      <td style="font-size:12px;color:#9a8a7e;padding:4px 0;">Location</td>
+                      <td style="font-size:12px;color:#3a2f28;font-weight:600;padding:4px 0;">Hyderabad, Telangana</td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+
+            <!-- Contact -->
+            <p class="contact-line" style="font-size:13px;color:#9a8a7e;margin:0;line-height:1.8;">
+              Have a question in the meantime?<br>
+              <a href="mailto:designarchstudio646@gmail.com" style="color:#a18167;font-weight:600;text-decoration:none;">designarchstudio646@gmail.com</a>
+              &nbsp;·&nbsp;
+              <a href="tel:+918019898569" style="color:#a18167;font-weight:600;text-decoration:none;">+91 80198 98569</a>
+            </p>
+          </td>
+        </tr>
+
+        <!-- Footer -->
+        <tr>
+          <td class="email-footer" style="padding:20px 40px;background:#f7f5f0;text-align:center;border-top:1px solid #ede4d8;">
+            <p style="margin:0 0 4px;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#b0a097;">Design Arch Studio</p>
+            <p style="margin:0;font-size:11px;color:#c8bdb3;letter-spacing:0.3px;">
+              Hyderabad, India &nbsp;·&nbsp;
+              <a href="https://designarchstudio.in" style="color:#a18167;text-decoration:none;font-weight:600;">designarchstudio.in</a>
+            </p>
+          </td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
