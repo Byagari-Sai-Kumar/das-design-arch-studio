@@ -7,7 +7,7 @@ import AkhileshDas from "../../assets/aboutUs/images/AkhileshDas.jpg";
 const teamMembers = [
     {
         name: "Abhinaya Das",
-        role: "Senior Construction Planning Manager",
+        role: "REGD. L. NO. 647 - Licensed GHMC - Structural Engineer / Engineer / Town Planner / Construction Manager",
         experience: "12+ Years Experience",
         image: AbhinayaDas,
         description: `
