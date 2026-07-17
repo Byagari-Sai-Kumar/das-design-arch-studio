@@ -3,8 +3,6 @@ import { FaTimes, FaExpand, FaCompress } from "react-icons/fa";
 import "../about/about.css";
 import AbhinayaDas from "../../assets/aboutUs/images/AbhinayaDas.jpg";
 import AkhileshDas from "../../assets/aboutUs/images/AkhileshDas.jpg";
-import AbhilashDas from "../../assets/aboutUs/images/AbhilashDas.jpg";
-import AbhitejDas from "../../assets/aboutUs/images/AbhitejDas.jpg";
 
 const teamMembers = [
     {
@@ -117,125 +115,6 @@ const teamMembers = [
                     degree: "Architectural License Registration",
                     institution: "Architecture Registration Board",
                     year: "2023"
-                }
-            ]
-        }
-    },
-    {
-        name: "Abhilash Das",
-        role: "3D Visualizer",
-        experience: "5+ Years Experience",
-        image: AbhilashDas,
-        description: `
-            We provide high-quality 3D visualization services for residential and commercial projects, helping clients clearly visualize their spaces before execution. Our expertise covers both interior and exterior home designs, ensuring accurate, realistic, and detailed representations that bring concepts to life.
-            Using industry-standard software such as Autodesk 3ds Max and Autodesk Maya, we create visually compelling 3D models, renders, and walkthroughs that reflect design intent, materials, lighting, and spatial planning with precision.
-            `,
-        hasResume: true,
-        resume: {
-            summary: "Professional 3D Visualizer with 5+ years of experience in creating high-quality architectural and interior visualization services. Expertise in using industry-standard software to produce realistic 3D models, renders, and walkthroughs for residential and commercial projects.",
-            skills: [
-                "3D Modeling",
-                "3ds Max",
-                "Autodesk Maya",
-                "Rendering",
-                "Lighting Design",
-                "Material Creation",
-                "Walkthrough Production",
-                "Photo Realism",
-                "Interior Visualization",
-                "Exterior Visualization",
-                "VRay Rendering",
-                "Post-Processing"
-            ],
-            experience: [
-                {
-                    title: "3D Visualizer & Renderer",
-                    company: "Design Arch Studio",
-                    duration: "2023 - Present",
-                    description: "Create high-quality 3D visualizations, renders, and walkthroughs for architectural and interior design projects using 3ds Max and Maya."
-                },
-                {
-                    title: "Senior 3D Visualizer",
-                    company: "Visualization Studio",
-                    duration: "2018 - 2023",
-                    description: "Produced photorealistic 3D models and renderings for residential and commercial projects, managed visualization pipelines."
-                },
-                {
-                    title: "3D Artist",
-                    company: "Digital Design Company",
-                    duration: "2013 - 2018",
-                    description: "Developed 3D models and visualizations, assisted in lighting setup and material creation for various design projects."
-                }
-            ],
-            education: [
-                {
-                    degree: "Diploma in 3D Animation & Visualization",
-                    institution: "Institute of Advanced Animation",
-                    year: "2013"
-                },
-                {
-                    degree: "Professional Certification in 3ds Max",
-                    institution: "Autodesk Learning Center",
-                    year: "2014"
-                }
-            ]
-        }
-    },
-    {
-        name: "Abhitej Das",
-        role: "Designer",
-        experience: "5+ Years Experience",
-        image: AbhitejDas,
-        description: `
-            We lead the creative vision of the studio, shaping concepts that balance aesthetics, functionality, and context. We ensure every project reflects our design philosophy through thoughtful spatial planning, innovation.
-            `,
-        hasResume: true,
-        resume: {
-            summary: "Creative Designer with 5+ years of professional experience in delivering aesthetic and functional design solutions for residential and commercial projects. Expertise in spatial planning, interior design, and design conceptualization.",
-            skills: [
-                "Design Conceptualization",
-                "Interior Design",
-                "Space Planning",
-                "Color & Material Selection",
-                "Design Documentation",
-                "Client Presentations",
-                "Design Software",
-                "Aesthetic Design",
-                "Functional Design",
-                "Design Innovation",
-                "Adobe Creative Suite",
-                "Mood Board Creation"
-            ],
-            experience: [
-                {
-                    title: "Lead Designer",
-                    company: "Design Arch Studio",
-                    duration: "2025 - Present",
-                    description: "Lead creative design direction for projects, develop design concepts, and ensure adherence to design philosophy and client requirements."
-                },
-                {
-                    title: "Senior Designer",
-                    company: "Design & Interiors Firm",
-                    duration: "2019 - 2025",
-                    description: "Developed design concepts, created mood boards, managed design presentations, and collaborated with architects and clients."
-                },
-                {
-                    title: "Designer",
-                    company: "Creative Design Studio",
-                    duration: "2019 - 2021",
-                    description: "Contributed to design projects, prepared design documentation, and assisted in client consultations and presentations."
-                }
-            ],
-            education: [
-                {
-                    degree: "B.Tech in Electrical and Electronics Engineering (EEE)",
-                    institution: "Vasavi College of Engineering",
-                    year: "2018"
-                },
-                {
-                    degree: "Certification in Design Thinking",
-                    institution: "Design Academy",
-                    year: "2020"
                 }
             ]
         }
