@@ -40,7 +40,7 @@ const CtaBanner = () => {
     const navigate = useNavigate();
 
     return (
-        <section className="cta-banner">
+        <section id="vision-cta" className="cta-banner">
             <div className="cta-banner-inner">
 
                 <div className="cta-banner-text">

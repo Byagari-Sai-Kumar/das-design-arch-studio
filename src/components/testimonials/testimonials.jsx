@@ -21,30 +21,7 @@ const Testimonials = () => {
         name: "Suresh Reddy",
         designation: "Construction Contractor",
       },
-      {
-        id: 3,
-        rating: 5,
-        comment:
-          "As a material supply partner, we appreciate their professionalism and timely coordination. Their design standards are high and well thought out.",
-        name: "Anita Verma",
-        designation: "Material Vendor Partner",
-      },
-      {
-        id: 4,
-        rating: 4.5,
-        comment:
-          "The interior designs provided by the team were modern, elegant, and perfectly aligned with our lifestyle. We are extremely happy with the final outcome.",
-        name: "Priya Shah",
-        designation: "Interior Design Client",
-      },
-      {
-        id: 5,
-        rating: 5,
-        comment:
-          "Their site supervision and technical knowledge make them stand out. As a project engineer, I value their clarity in drawings and planning.",
-        name: "Vikram Naik",
-        designation: "Site Engineer",
-      },
+      
     ],
     []
   );

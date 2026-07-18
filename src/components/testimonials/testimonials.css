@@ -32,10 +32,10 @@
 }
 
 .ts-track {
-    display: grid;
-    grid-auto-flow: column;
-    grid-auto-columns: min(720px, 100%);
+    display: flex;
     gap: 18px;
+    justify-content: center;
+    align-items: stretch;
 
     overflow-x: auto;
     overflow-y: hidden;
@@ -58,6 +58,8 @@
 ================================ */
 
 .ts-card {
+    flex: 0 0 min(92%, 720px);
+    width: min(92%, 720px);
     scroll-snap-align: center;
     background: var(--color-bg-alt);
     border-radius: 18px;
@@ -123,16 +125,21 @@
     }
 
     .testimonials-section {
-        padding: 10px 30px;
+        padding: 10px 20px;
     }
 
     .ts-track {
-        grid-auto-columns: 92%;
+        justify-content: flex-start;
+        padding: 10px 12px 18px;
     }
 
     .ts-card {
+        flex: 0 0 100%;
+        width: 100%;
+        max-width: 100%;
         padding: 28px 20px;
         min-height: 280px;
+        scroll-snap-align: start;
     }
 }
 
@@ -144,7 +151,13 @@
 
 @media (min-width: 900px) {
     .ts-track {
-        grid-auto-columns: calc((100% - 36px - 10%) / 3);
-        padding-right: 10%;
+        justify-content: center;
+        padding: 10px 10%;
+    }
+
+    .ts-card {
+        flex: 0 0 calc((100% - 72px) / 3);
+        width: calc((100% - 72px) / 3);
+        max-width: calc((100% - 72px) / 3);
     }
 }

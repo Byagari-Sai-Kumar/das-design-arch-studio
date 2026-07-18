@@ -43,6 +43,17 @@ const Home = () => {
 
     const navigate = useNavigate();
 
+    const handleHeroClick = (slide) => {
+        if (slide.button === "WHAT DO YOU WANT TO BUILD") {
+            const target = document.getElementById("vision-cta");
+            if (target) {
+                target.scrollIntoView({ behavior: "smooth" });
+                return;
+            }
+        }
+        navigate(slide.path);
+    };
+
     // auto slide
     useEffect(() => {
         const interval = setInterval(() => {
@@ -70,8 +81,8 @@ const Home = () => {
                 <span className="title-highlight-span">{slide.highlight}</span>
                 </h1>
 
-                <button className="hero-btn" onClick={() => navigate("/our-services")}>
-                    WHAT DO YOU WANT TO BUILD
+                <button className="hero-btn" onClick={() => handleHeroClick(slide)}>
+                    {slide.button}
                     <span className="what-do-you-build-icon">
                         <BsArrowRight />
                     </span>

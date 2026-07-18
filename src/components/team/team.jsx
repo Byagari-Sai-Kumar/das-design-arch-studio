@@ -7,7 +7,7 @@ import AkhileshDas from "../../assets/aboutUs/images/AkhileshDas.jpg";
 const teamMembers = [
     {
         name: "Abhinaya Das",
-        role: "REGD. L. NO. 647 - Licensed GHMC - Structural Engineer / Engineer / Town Planner / Construction Manager",
+        role: "REGD. L. NO. 647 | Licensed GHMC | Structural Engineer / Engineer / Town Planner | Construction Manager",
         experience: "12+ Years Experience",
         image: AbhinayaDas,
         description: `
@@ -63,7 +63,7 @@ const teamMembers = [
     },
     {
         name: "Ar. Akhilesh Das",
-        role: "REGD. L. NO. CA/2023/167135 | Senior Architect",
+        role: "REGD. L. NO. CA/2023/167135 |  Architect",
         experience: "5+ Years Experience",
         image: AkhileshDas,
         description: `

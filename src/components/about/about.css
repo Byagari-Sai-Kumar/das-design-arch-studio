@@ -218,8 +218,15 @@
         margin-bottom: 5px;
     }
 
+    .team-role {
+        width: 90%;
+        margin: 0 auto;
+        text-align: center;
+    }
+
     .team-desc {
         width: 90%;
+        margin: 0 auto;
         text-align: justify;
     }
 }
