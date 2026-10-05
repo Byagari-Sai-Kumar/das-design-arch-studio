@@ -3,6 +3,8 @@ import { FaTimes, FaExpand, FaCompress } from "react-icons/fa";
 import "../about/about.css";
 import AbhinayaDas from "../../assets/aboutUs/images/AbhinayaDas.jpg";
 import AkhileshDas from "../../assets/aboutUs/images/AkhileshDas.jpg";
+import AbhilashDas from "../../assets/aboutUs/images/AbhilashDas.jpg";
+import AbhitejDas from "../../assets/aboutUs/images/AbhitejDas.jpg";
 
 const teamMembers = [
     {
@@ -115,6 +117,120 @@ const teamMembers = [
                     degree: "Architectural License Registration",
                     institution: "Architecture Registration Board",
                     year: "2023"
+                }
+            ]
+        }
+    },
+    {
+        name: "Abhilash Das",
+        role: "3D Visualizer | Architectural Visualization Specialist",
+        experience: "3D Visualization Specialist",
+        image: AbhilashDas,
+        description: `
+            Abhilash Das specializes in transforming architectural concepts into realistic
+            3D visualizations that help clients clearly understand their future spaces.
+            His work focuses on realistic materials, lighting, furniture placement,
+            architectural details, and visual composition. He works closely with the
+            architecture and interior design teams to turn technical drawings and design
+            concepts into compelling visual presentations that bring projects to life
+            before construction begins.
+        `,
+        hasResume: true,
+        resume: {
+            summary:
+                "3D visualization specialist focused on creating realistic architectural and interior visualizations that help clients understand and experience design concepts before execution.",
+
+            skills: [
+                "3D Architectural Visualization",
+                "Interior Visualization",
+                "Exterior Rendering",
+                "3D Modeling",
+                "Material & Texture Design",
+                "Lighting & Rendering",
+                "Architectural Presentation",
+                "Walkthrough Visualization",
+                "Post Production"
+            ],
+
+            experience: [
+                {
+                    title: "3D Visualization Specialist",
+                    company: "Design Arch Studio",
+                    duration: "Present",
+                    description:
+                        "Create realistic 3D visualizations for residential and commercial architecture projects, working closely with architects and interior designers."
+                },
+                {
+                    title: "3D Artist",
+                    company: "Architectural Visualization Studio",
+                    duration: "Previous Experience",
+                    description:
+                        "Developed architectural models, interior scenes, materials, lighting setups, and presentation renders for client projects."
+                }
+            ],
+
+            education: [
+                {
+                    degree: "3D Visualization & Architectural Design",
+                    institution: "Design & Visualization Program",
+                    year: "Completed"
+                }
+            ]
+        }
+    },
+    {
+        name: "Abhitej Das",
+        role: "Marketing & Client Relations | Business Development",
+        experience: "Marketing & Client Acquisition",
+        image: AbhitejDas,
+        description: `
+            Abhitej Das focuses on building the studio's presence and connecting the
+            right clients with the right design solutions. His responsibilities include
+            client acquisition, digital marketing, advertising, enquiry management,
+            brand promotion, and maintaining relationships with prospective clients.
+            He works closely with the design team to understand project requirements
+            and ensure that every enquiry receives timely communication and guidance
+            throughout the initial stages of the engagement.
+        `,
+        hasResume: true,
+        resume: {
+            summary:
+                "Marketing and business development professional focused on client acquisition, digital promotion, advertising, enquiry management, and building strong client relationships for the studio.",
+
+            skills: [
+                "Digital Marketing",
+                "Client Acquisition",
+                "Lead Generation",
+                "Advertising",
+                "Social Media Marketing",
+                "Brand Promotion",
+                "Client Communication",
+                "Business Development",
+                "Enquiry Management"
+            ],
+
+            experience: [
+                {
+                    title: "Marketing & Business Development",
+                    company: "Design Arch Studio",
+                    duration: "Present",
+                    description:
+                        "Manage marketing initiatives, generate project enquiries, promote the studio's services, and coordinate initial communication with prospective clients."
+                },
+                {
+                    title: "Marketing & Client Relations",
+                    company: "Previous Experience",
+                    duration: "Previous Experience",
+                    description:
+                        "Worked on client communication, promotional activities, lead generation, and marketing campaigns to improve business reach and customer engagement."
+                }
+            ],
+
+            education: [
+                {
+                    degree: "Marketing & Business Development",
+                    institution: "Business & Marketing Program",
+                    year: "Completed"
                 }
             ]
         }
