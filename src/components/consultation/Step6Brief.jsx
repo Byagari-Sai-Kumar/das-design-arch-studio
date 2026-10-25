@@ -156,7 +156,7 @@ const Step6Brief = ({ formData, updateField, errors }) => {
             onChange={e => handleConsent("consentContact", e.target.checked)}
           />
           <span className="consent-text">
-            I agree to be contacted by <strong>Das Design Arch Studio</strong> regarding my consultation request and project.
+            I agree to be contacted by <strong>Design Arch Studio</strong> regarding my consultation request and project.
           </span>
         </label>
         {errors.consentContact && (

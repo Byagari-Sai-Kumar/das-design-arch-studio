@@ -1,6 +1,6 @@
 import React from "react";
 import "./services.css";
-import { FaHome, FaBuilding, FaHammer } from "react-icons/fa";
+import { FaHome, FaBuilding, FaHammer, FaTasks, FaClipboardCheck } from "react-icons/fa";
 import { Md3dRotation } from "react-icons/md";
 import { BsArrowRight } from "react-icons/bs";
 import { useNavigate } from "react-router-dom";
@@ -9,7 +9,9 @@ const iconMap = {
     FaHome: FaHome,
     FaBuilding: FaBuilding,
     FaHammer: FaHammer,
-    Md3dRotation: Md3dRotation
+    Md3dRotation: Md3dRotation,
+    FaTasks: FaTasks,
+    FaClipboardCheck: FaClipboardCheck
     };
 
     const OurServices = [
@@ -40,6 +42,20 @@ const iconMap = {
         title: "3D Visualization",
         description:
         "Visualize your project before execution with high-quality 3D renders, walkthroughs, and realistic spatial previews."
+    },
+    {
+        id: 5,
+        icon: "FaTasks",
+        title: "Project Management / Owner Representative",
+        description:
+        "We act on your behalf from planning to handover — managing contractors, schedules, and costs so your interests are protected at every stage."
+    },
+    {
+        id: 6,
+        icon: "FaClipboardCheck",
+        title: "Cost & Quality Management",
+        description:
+        "Keep your project on budget and built right — transparent estimates, value engineering, quality checklists, and site audits from start to finish."
     }
     ];
 
@@ -51,6 +67,8 @@ const iconMap = {
         "Interiors": "interiors",
         "Construction Planning": "planning",
         "3D Visualization": "visualization",
+        "Project Management / Owner Representative": "projectManagement",
+        "Cost & Quality Management": "costQualityManagement",
     };
 
     const handleKnowMore = (serviceTitle) => {

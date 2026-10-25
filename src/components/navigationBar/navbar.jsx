@@ -62,7 +62,11 @@ const Navbar = () => {
     // This avoids requiring the pathname to be exactly '/' so returning
     // to the top of the page (hero visible) makes the navbar transparent
     // even if the route didn't change.
-    const showTransparent = !scrolledPastHero;
+    // Standalone pages have no hero banner and a light background, so they always get the solid bar.
+    const isStandalonePage =
+        ["/consultation", "/contact-us"].includes(pathname) ||
+        pathname.startsWith("/our-works/interiors");
+    const showTransparent = !isStandalonePage && !scrolledPastHero;
 
     const closeAll = () => {
         setMobileOpen(false);
@@ -81,7 +85,7 @@ const Navbar = () => {
                 <NavLink to="/">
                     <img src={showTransparent ? dasDesignLogoOne : dasDesignLogoTwo} 
                     className="logo-image"
-                    alt="Das Design Logo"
+                    alt="Design Arch Studio logo"
                     />
                 </NavLink>
             </div>

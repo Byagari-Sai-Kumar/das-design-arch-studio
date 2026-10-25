@@ -6,12 +6,12 @@ const About = () => {
         <section id="what-we-do" className="about-section">
             {/* ── Mobile layout ── */}
             <div className="mobile-layout">
-                <h1 className="know-about-das">Know About DAS</h1>
+                <h1 className="know-about-das">Know About Us</h1>
                 <div className="about-image">
-                    <img src={aboutUsImage} alt="Das Design Arch Studio" />
+                    <img src={aboutUsImage} alt="Design Arch Studio" />
                 </div>
                 <p className="about-us-para">
-                    Das Design Arch Studio is a multidisciplinary architectural and
+                    Design Arch Studio is a multidisciplinary architectural and
                     interior design firm delivering innovative, functional and
                     aesthetically refined spaces. Our philosophy blends creativity,
                     sustainability and modern design thinking.
@@ -33,12 +33,12 @@ const About = () => {
             <div className="desktop-layout">
                 <div className="about-image-content-layout">
                     <div className="about-image">
-                        <img src={aboutUsImage} alt="Das Design Arch Studio" />
+                        <img src={aboutUsImage} alt="Design Arch Studio" />
                     </div>
                     <div className="about-content">
-                        <h2>Know About DAS</h2>
+                        <h2>Know About Us</h2>
                         <p>
-                            Das Design Arch Studio is a multidisciplinary architectural and
+                            Design Arch Studio is a multidisciplinary architectural and
                             interior design firm delivering innovative, functional and
                             aesthetically refined spaces. Our philosophy blends creativity,
                             sustainability and modern design thinking.

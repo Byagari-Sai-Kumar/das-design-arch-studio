@@ -47,7 +47,7 @@ const ContactUs = () => {
       {/* CONTACT SECTION */}
       <section id="contact-us" className="contact-section">
         <h2 className="our-services-heading">Contact Us</h2>
-        <p className="our-services-subheading">Everything you need to know about Das Design Arch Studio</p>
+        <p className="our-services-subheading">Everything you need to know about Design Arch Studio</p>
 
         <div className="contact-container">
           {/* LEFT: FORM */}

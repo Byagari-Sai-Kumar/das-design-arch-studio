@@ -1,11 +1,12 @@
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import { sortedInteriorProjects } from "../../data/interiorProjects";
 import "./ourWorks.css";
 import { IoClose } from "react-icons/io5";
 import { BsArrowLeft, BsArrowRight } from "react-icons/bs";
 
 // example images (replace with your real ones)
 import archImageOne from "../../assets/ourWorks/architecture/projectOne/imageOne.jpg";
-import intImageOne from "../../assets/ourWorks/interior/projectOne/imageOne.jpg";
 import planImageOne from "../../assets/ourWorks/planning/projectOne/imageOne.jpg";
 import visualImageOne from "../../assets/ourWorks/visualization/projectOne/imageOne.jpg";
 import galleryImageOne from "../../assets/ourWorks/galleryImageOne.jpg";
@@ -29,12 +30,9 @@ const projects = [
   {
     id: 2,
     category: "Interiors",
-    subCategory: "Residential • Bedroom",
-    title: "Luxury Bedroom Interiors",
-    description:
-      "A peaceful bedroom design with minimal color palette, modern wardrobes, and ambient lighting for a calm atmosphere.",
-    coverImage: intImageOne,
-    images: [galleryImageFour, galleryImageFive, galleryImageSix],
+    subCategory: "Completed Projects",
+    coverImage: sortedInteriorProjects[0].coverImage,
+    path: "/our-works/interiors",
   },
   {
     id: 3,
@@ -81,8 +79,13 @@ const projects = [
 export default function OurWorks() {
   const [selectedProject, setSelectedProject] = useState(null);
   const [activeIndex, setActiveIndex] = useState(0);
+  const navigate = useNavigate();
 
   const openProject = (project) => {
+    if (project.path) {
+      navigate(project.path);
+      return;
+    }
     setSelectedProject(project);
     setActiveIndex(0);
     //document.body.style.overflow = "hidden";
@@ -108,12 +111,17 @@ export default function OurWorks() {
 
   // keyboard support
   useEffect(() => {
-    const handleKey = (e) => {
-      if (!selectedProject) return;
+    if (!selectedProject) return;
+    const total = selectedProject.images.length;
 
-      if (e.key === "Escape") closeProject();
-      if (e.key === "ArrowRight") nextImage();
-      if (e.key === "ArrowLeft") prevImage();
+    const handleKey = (e) => {
+      if (e.key === "Escape") {
+        setSelectedProject(null);
+        setActiveIndex(0);
+        document.body.style.overflow = "auto";
+      }
+      if (e.key === "ArrowRight") setActiveIndex((prev) => (prev + 1) % total);
+      if (e.key === "ArrowLeft") setActiveIndex((prev) => (prev === 0 ? total - 1 : prev - 1));
     };
 
     window.addEventListener("keydown", handleKey);

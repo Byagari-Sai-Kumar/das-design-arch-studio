@@ -24,7 +24,7 @@ const faqData = [
   },
   {
     q: "Still have questions?",
-    a: "If your question is not listed here, feel free to reach out to Das Design Arch Studio. We’ll be happy to guide you and provide the right solution for your project.",
+    a: "If your question is not listed here, feel free to reach out to Design Arch Studio. We’ll be happy to guide you and provide the right solution for your project.",
   },
 ];
 
@@ -39,7 +39,7 @@ export default function FAQ() {
     <section className="faq-section" id="faq">
       <div className="faq-container">
         <h2 className="faq-title">Frequently Asked Questions</h2>
-        <p className="faq-subtitle">Everything you need to know about Das Design Arch Studio</p>
+        <p className="faq-subtitle">Everything you need to know about Design Arch Studio</p>
 
         <div className="faq-list">
           {faqData.map((item, i) => {

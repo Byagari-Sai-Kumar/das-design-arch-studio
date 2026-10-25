@@ -13,7 +13,9 @@
     /* ---------- GRID ---------- */
 
     .services-grid {
-    display: grid;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 30px;
     }
 
@@ -111,8 +113,9 @@
     .our-services-heading{
         margin-bottom: 25px;
     }
-    .services-grid {
-        grid-template-columns: 1fr;
+    .services-card {
+        flex: 1 1 100%;
+        max-width: 100%;
     }
     }
 
@@ -121,8 +124,9 @@
     .services-section{
         padding: 20px 50px;
     }
-    .services-grid {
-        grid-template-columns: repeat(2, 1fr);
+    .services-card {
+        flex: 1 1 calc(50% - 15px);
+        max-width: calc(50% - 15px);
     }
     }
 
@@ -136,7 +140,8 @@
         margin-bottom: 30px;
     }
 
-    .services-grid {
-        grid-template-columns: repeat(4, 1fr);
+    .services-card {
+        flex: 1 1 calc(33.333% - 20px);
+        max-width: calc(33.333% - 20px);
     }
 }

@@ -1,127 +1,82 @@
-import { useEffect, useState } from "react";
-import {useNavigate} from 'react-router-dom';
+import { Fragment, useEffect, useState } from "react";
+import { useNavigate } from 'react-router-dom';
 import heroInteriorOne from '../../assets/home/images/heroInteriorOne.jpg';
 import heroInteriorTwo from '../../assets/home/images/heroInteriorTwo.jpg';
 import heroInteriorThree from '../../assets/home/images/heroInteriorThree.jpg';
 import heroInteriorFour from '../../assets/home/images/heroInteriorFour.jpg';
-import { BsArrowLeft,BsArrowRight  } from "react-icons/bs";
+import { BsArrowRight } from "react-icons/bs";
+import { PiMedalLight, PiHardHatLight, PiGearSixLight, PiMapPinLight } from "react-icons/pi";
 import "./home.css";
 
-const slides = [
-    {
-        image: heroInteriorOne,
-        title: "Designing Modern Living Spaces",
-        highlight: "Architecture with Purpose",
-        button: "WHAT DO YOU WANT TO BUILD",
-        path: "/portfolio"
-    },
-    {
-        image: heroInteriorTwo,
-        title: "Where Design Meets Function",
-        highlight: "Creative Architecture",
-        button: "WHAT DO YOU WANT TO BUILD",
-        path: "/our-services"
-    },
-    {
-        image: heroInteriorThree,
-        title: "Shaping Future Skylines",
-        highlight: "Innovative Concepts",
-        button: "Visit Gallery",
-        path: "/gallery"
-    },
-    {
-        image: heroInteriorFour,
-        title: "Inspired Interior & Exterior Design",
-        highlight: "Timeless Spaces",
-        button: "Contact Us",
-        path: "/contact-us"
-    }
+const slides = [heroInteriorOne, heroInteriorTwo, heroInteriorThree, heroInteriorFour];
+
+const stats = [
+    { icon: PiMedalLight, title: "Experienced", subtitle: "Design Team" },
+    { icon: PiHardHatLight, title: "Licensed", subtitle: "Architects & Construction Managers" },
+    { icon: PiGearSixLight, title: "End-to-End", subtitle: "Architecture · Interiors · Turnkey" },
+    { icon: PiMapPinLight, title: "Hyderabad", subtitle: "Based Studio" },
 ];
 
 const Home = () => {
     const [current, setCurrent] = useState(0);
-
     const navigate = useNavigate();
 
-    const handleHeroClick = (slide) => {
-        if (slide.button === "WHAT DO YOU WANT TO BUILD") {
-            const target = document.getElementById("vision-cta");
-            if (target) {
-                target.scrollIntoView({ behavior: "smooth" });
-                return;
-            }
-        }
-        navigate(slide.path);
-    };
-
-    // auto slide
     useEffect(() => {
         const interval = setInterval(() => {
-        setCurrent((prev) => (prev + 1) % slides.length);
+            setCurrent((prev) => (prev + 1) % slides.length);
         }, 5000);
-
         return () => clearInterval(interval);
     }, []);
 
     return (
         <section className="hero-section">
-        {slides.map((slide, index) => (
-            <div
-                key={index}
-                className={`hero-slide ${index === current ? "active" : ""}`}
-                style={{
-                    backgroundImage: `url(${slide.image})`
-                }}
-            >
-            <div className="hero-overlay"></div>
+            {slides.map((image, index) => (
+                <div
+                    key={index}
+                    className={`hero-slide ${index === current ? "active" : ""}`}
+                    style={{ backgroundImage: `url(${image})` }}
+                >
+                    <div className="hero-overlay"></div>
+                </div>
+            ))}
 
             <div className="hero-content">
-                <h1>
-                {slide.title}
-                <span className="title-highlight-span">{slide.highlight}</span>
+                <p className="hero-eyebrow">
+                    Architecture <span>|</span> Interiors <span>|</span> Turnkey
+                </p>
+                <h1 className="hero-title">
+                    Design Spaces <br />That Reflect You
                 </h1>
-
-                <button className="hero-btn" onClick={() => handleHeroClick(slide)}>
-                    {slide.button}
-                    <span className="what-do-you-build-icon">
-                        <BsArrowRight />
-                    </span>
-                </button>
+                <p className="hero-description">
+                    Thoughtful architecture, refined interiors and turnkey solutions — crafted around your lifestyle.
+                </p>
+                <div className="hero-actions">
+                    <button className="hero-btn hero-btn-primary" onClick={() => navigate("/consultation")}>
+                        Free Quote <BsArrowRight className="hero-btn-icon" />
+                    </button>
+                    <button className="hero-btn hero-btn-outline" onClick={() => navigate("/portfolio")}>
+                        View Portfolio <BsArrowRight className="hero-btn-icon" />
+                    </button>
+                </div>
             </div>
+
+            <div className="hero-stats">
+                {stats.map((stat, index) => {
+                    const Icon = stat.icon;
+                    return (
+                        <Fragment key={stat.title}>
+                            {index > 0 && <span className="hero-stat-divider" aria-hidden="true" />}
+                            <div className="hero-stat">
+                                <Icon className="hero-stat-icon" />
+                                <div>
+                                    <strong>{stat.title}</strong>
+                                    <span>{stat.subtitle}</span>
+                                </div>
+                            </div>
+                        </Fragment>
+                    );
+                })}
             </div>
-        ))}
-
-        {/* arrows */}
-        <button
-            className="hero-arrow left"
-            onClick={() =>
-            setCurrent(
-                current === 0 ? slides.length - 1 : current - 1
-            )
-            }
-        >
-            <BsArrowLeft className="arrow-icon"/>
-        </button>
-
-        <button
-            className="hero-arrow right"
-            onClick={() =>
-            setCurrent((current + 1) % slides.length)
-            }
-        >
-            <BsArrowRight className="arrow-icon"/>
-        </button>
-
-        {/* dots */}
-        <div className="hero-dots">
-            {slides.map((_, index) => (
-            <span
-                key={index}
-                className={index === current ? "dot active" : "dot"}
-                onClick={() => setCurrent(index)}
-            ></span>
-            ))}
-        </div>
         </section>
     );
 };

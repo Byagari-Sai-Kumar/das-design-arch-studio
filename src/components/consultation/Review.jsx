@@ -34,9 +34,6 @@ const Review = ({ formData, onEdit }) => {
     ? `₹ ${project.budgetAmount}${project.budgetAmount >= 500000000 ? "+" : ""}`
     : "—";
 
-  const plotSize = plot.plotSizeValue
-    ? `${plot.plotSizeValue} ${optLabel([{value:plot.plotSizeUnit,label:plot.plotSizeUnit},...[]], plot.plotSizeUnit) || plot.plotSizeUnit}`
-    : "—";
   const plotSizeDisplay = plot.plotSizeValue
     ? `${plot.plotSizeValue} ${plot.plotSizeUnit.toUpperCase()}`
     : "—";

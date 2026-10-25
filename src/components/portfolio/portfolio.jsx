@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./portfolio.css";
 import { useLocation } from "react-router-dom";
 
@@ -10,6 +10,12 @@ import plan3 from "../../assets/portfolio/plan3.jpg";
 import plan4 from "../../assets/portfolio/plan4.jpg";
 import vis4 from "../../assets/portfolio/vis4.jpg";
 import vis5 from "../../assets/portfolio/vis5.jpg";
+
+import pm1 from "../../assets/portfolio/project_management_one.jpeg";
+import pm2 from "../../assets/portfolio/project_management_two.jpg";
+import cost1 from "../../assets/portfolio/cost_management_one.jpg";
+import cost2 from "../../assets/portfolio/cost_management_two.jpg";
+import quality2 from "../../assets/portfolio/quality_management_two.png";
 
 const portfolioData = {
   architecture: [
@@ -130,16 +136,99 @@ const portfolioData = {
       image: vis5,
     },
   ],
+
+  projectManagement: [
+    {
+      title: "Project Management / Owner Representative",
+      subtitle: "Your Representative from Planning to Handover",
+      description: `We act as your representative throughout the project — managing contractors, consultants, and vendors on your behalf so your time, budget, and quality expectations are protected.
+      From the first milestone to final handover, we align design, schedule, and on-site execution, keep you informed at every stage, and make sure decisions are made in your interest.`,
+      image: pm1,
+    },
+    {
+      title: "",
+      subtitle: "",
+      description: "",
+      subHeadineOne: "Owner Representation",
+      subHeadineOneDescription:
+        "Represent you in meetings with contractors, consultants, and vendors, so every decision protects your interests.",
+      subHeadineTwo: "Contractor Selection & Bid Review",
+      subHeadineTwoDescription:
+        "Compare quotations, check scope and specifications, and recommend the right contractors and vendors for the job.",
+      subHeadineThree: "Milestone & Schedule Planning",
+      subHeadineThreeDescription:
+        "Set clear timelines and milestones for every phase, keeping design, procurement, and construction in step.",
+      subHeadineFour: "Site Coordination & Progress Reporting",
+      subHeadineFourDescription:
+        "Coordinate work on-site, track issues before they cause delays, and share regular updates on where your project stands.",
+      subHeadineFive: "Bill Verification & Handover",
+      subHeadineFiveDescription:
+        "Verify completed work before bills are paid, then manage final inspections, documentation, and handover.",
+      image: pm2,
+    },
+  ],
+
+  costQualityManagement: [
+    {
+      title: "Cost & Quality Management",
+      subtitle: "Budgets You Can Trust, Quality You Can See",
+      description: `We bring clarity to every rupee spent on your project, from the first estimate to the final bill, while holding every stage of construction to a defined quality standard.
+      Our cost planning balances your budget with the quality you expect, and regular checks and audits make sure the final result matches the design intent and stands the test of time.`,
+      image: cost1,
+    },
+    {
+      title: "Cost Management",
+      subtitle: "",
+      description: "",
+      subHeadineOne: "Budget Planning & Estimates",
+      subHeadineOneDescription:
+        "Prepare detailed cost estimates aligned with your project scope and expectations.",
+      subHeadineTwo: "Value Engineering",
+      subHeadineTwoDescription:
+        "Identify smarter material and design choices that reduce cost without compromising quality.",
+      subHeadineThree: "Vendor & Contractor Costing",
+      subHeadineThreeDescription:
+        "Review vendor and contractor quotes to ensure fair, competitive pricing.",
+      subHeadineFour: "Payment & Billing Tracking",
+      subHeadineFourDescription:
+        "Track payments, certify bills, and keep cash flow organised throughout execution.",
+      subHeadineFive: "Cost Reporting",
+      subHeadineFiveDescription:
+        "Provide clear cost reports so you can monitor spending against budget at every stage.",
+      image: cost2,
+    },
+    {
+      title: "Quality Management",
+      subtitle: "",
+      description: "",
+      subHeadineOne: "Quality Checklists",
+      subHeadineOneDescription:
+        "Define clear quality checklists for materials, workmanship, and finishing at every stage.",
+      subHeadineTwo: "Site Quality Audits",
+      subHeadineTwoDescription:
+        "Conduct regular site audits to catch and correct issues before they become costly.",
+      subHeadineThree: "Material Verification",
+      subHeadineThreeDescription:
+        "Verify materials against approved specifications before they go into the project.",
+      subHeadineFour: "Snag List Management",
+      subHeadineFourDescription:
+        "Identify and track snags, ensuring every item is resolved before handover.",
+      subHeadineFive: "Standards Compliance",
+      subHeadineFiveDescription:
+        "Ensure workmanship and finishes meet agreed quality and safety standards.",
+      image: quality2,
+    },
+  ],
 };
 
 const Portfolio = () => {
   const location = useLocation();
 
-  const initialCategory = useMemo(() => {
-    return location.state?.portfolioCategory || "architecture";
-  }, [location.state?.portfolioCategory]);
+  // Older links or saved browser history may name a tab that no longer exists
+  const requestedCategory = location.state?.portfolioCategory;
+  const validRequestedCategory = portfolioData[requestedCategory] ? requestedCategory : "architecture";
 
-  const [category, setCategory] = useState(initialCategory);
+  const [category, setCategory] = useState(validRequestedCategory);
 
   // the currently visible page
   const [pageIndex, setPageIndex] = useState(0);
@@ -149,14 +238,19 @@ const Portfolio = () => {
   const [flipDirection, setFlipDirection] = useState("next"); // next | prev
   const [targetIndex, setTargetIndex] = useState(null);
 
-  useEffect(() => {
-    if (location.state?.portfolioCategory) {
-      setCategory(initialCategory);
+  // Switch to the tab requested by navigation (e.g. a service's "Know more") once per navigation
+  const [handledLocationKey, setHandledLocationKey] = useState(location.key);
+  if (handledLocationKey !== location.key) {
+    setHandledLocationKey(location.key);
+    if (requestedCategory) {
+      setCategory(validRequestedCategory);
       setPageIndex(0);
       setTargetIndex(null);
       setIsFlipping(false);
     }
+  }
 
+  useEffect(() => {
     // Only auto-scroll to portfolio when navigation explicitly requested it
     // (via state) or when the current pathname is the portfolio route.
     const shouldScroll = !!(
@@ -171,7 +265,7 @@ const Portfolio = () => {
         if (section) section.scrollIntoView({ behavior: "smooth" });
       }, 150);
     }
-  }, [initialCategory, location]);
+  }, [location]);
 
   const pages = portfolioData[category];
   const currentPage = pages[pageIndex];
@@ -255,6 +349,20 @@ const Portfolio = () => {
           onClick={() => changeCategory("visualization")}
         >
           3D Visualization
+        </button>
+
+        <button
+          className={category === "projectManagement" ? "active" : ""}
+          onClick={() => changeCategory("projectManagement")}
+        >
+          Project Management / Owner Representative
+        </button>
+
+        <button
+          className={category === "costQualityManagement" ? "active" : ""}
+          onClick={() => changeCategory("costQualityManagement")}
+        >
+          Cost & Quality Management
         </button>
       </div>
 

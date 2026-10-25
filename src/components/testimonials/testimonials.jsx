@@ -1,15 +1,24 @@
-import React, { useEffect, useMemo, useRef } from "react";
+import React, { useMemo } from "react";
 import "./testimonials.css";
 
 const Testimonials = () => {
   // ✅ Your old reviews + ratings (same content)
   const testimonials = useMemo(
     () => [
+      // Uncomment when the Vikram Residence project is added to Our Works.
+      // {
+      //   id: 3,
+      //   rating: 5,
+      //   comment:
+      //     "Design Arch Studio did the complete interiors of our 3 BHK flat — the kitchen, all three bedrooms and the wardrobes. Everything was built on site with great finishing, and the lighting makes every room feel warm. They understood exactly what our family needed.",
+      //   name: "Vikram",
+      //   designation: "Homeowner · Vikram Residence, Hyderabad",
+      // },
       {
         id: 1,
         rating: 5,
         comment:
-          "Das Design Arch Studio transformed our house into a beautiful and functional living space. Their attention to detail and understanding of our requirements was exceptional.",
+          "Design Arch Studio transformed our house into a beautiful and functional living space. Their attention to detail and understanding of our requirements was exceptional.",
         name: "Ramesh Kumar",
         designation: "Residential Client",
       },
@@ -17,7 +26,7 @@ const Testimonials = () => {
         id: 2,
         rating: 4.5,
         comment:
-          "Working with Das Design Arch Studio has been a smooth experience. Their drawings are clear, practical, and execution-friendly, which makes our construction process efficient.",
+          "Working with Design Arch Studio has been a smooth experience. Their drawings are clear, practical, and execution-friendly, which makes our construction process efficient.",
         name: "Suresh Reddy",
         designation: "Construction Contractor",
       },
@@ -25,23 +34,6 @@ const Testimonials = () => {
     ],
     []
   );
-
-  const trackRef = useRef(null);
-
-  // ✅ Desktop: mouse wheel scrolls horizontally (smooth UX)
-  useEffect(() => {
-    const track = trackRef.current;
-    if (!track) return;
-
-    const onWheel = (e) => {
-      if (e.shiftKey) return; // allow SHIFT + wheel normally
-      e.preventDefault();
-      track.scrollBy({ left: e.deltaY, behavior: "auto" });
-    };
-
-    track.addEventListener("wheel", onWheel, { passive: false });
-    return () => track.removeEventListener("wheel", onWheel);
-  }, []);
 
   const renderStars = (rating) => {
     const full = Math.floor(rating);
@@ -56,12 +48,12 @@ const Testimonials = () => {
       <h2 className="testimonials-heading">Testimonials</h2>
 
       <p className="testimonials-subtext">
-        What our clients, partners, and collaborators say about Das Design Arch Studio
+        What our clients, partners, and collaborators say about Design Arch Studio
       </p>
 
       {/* ✅ Scroll-snap carousel (no buttons, no dots) */}
       <div className="ts-carousel">
-        <div className="ts-track" ref={trackRef} aria-label="Testimonials carousel">
+        <div className="ts-track" aria-label="Testimonials carousel">
           {testimonials.map((t) => (
             <article className="ts-card" key={t.id}>
               <div className="ts-stars" aria-label={`${t.rating} out of 5 stars`}>
