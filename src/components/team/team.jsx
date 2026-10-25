@@ -9,7 +9,7 @@ import AbhitejDas from "../../assets/aboutUs/images/AbhitejDas.jpg";
 const teamMembers = [
     {
         name: "Abhinaya Das",
-        role: "REGD. L. NO. 647 | Licensed GHMC | Structural Engineer / Engineer / Town Planner | Construction Manager",
+        role: "REGD. L. NO. 647 | Licensed GHMC Engineer | Construction Manager",
         experience: "12+ Years Experience",
         image: AbhinayaDas,
         description: `
